@@ -1,0 +1,37 @@
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: var(--bg-base);
+  --color-foreground: var(--text-primary);
+  --color-card: var(--bg-surface);
+  --color-card-foreground: var(--text-primary);
+  --color-popover: var(--bg-elevated);
+  --color-popover-foreground: var(--text-primary);
+  --color-primary: var(--accent);
+  --color-primary-foreground: var(--text-primary);
+  --color-secondary: var(--bg-subtle);
+  --color-secondary-foreground: var(--text-secondary);
+  --color-muted: var(--bg-subtle);
+  --color-muted-foreground: var(--text-muted);
+  --color-accent: var(--accent-light);
+  --color-accent-foreground: var(--accent);
+  --color-destructive: var(--danger);
+  --color-destructive-foreground: var(--text-inverse);
+  --color-border: var(--border-default);
+  --color-sidebar: var(--sidebar-bg);
+  --color-sidebar-foreground: var(--sidebar-text);
+  --color-ring: var(--accent);
+  
+  --color-chart-1: #FBC13A; /* Yellow accent */
+  --color-chart-2: #262626; /* Dark gray */
+  --color-chart-3: #10B981;
+  --color-chart-4: #F59E0B;
+  --color-chart-5: #EC4899;
+
+  --radius-lg: var(--radius-card);
+  --radius-md: var(--radius-md);
+  --radius-sm: var(--radius-sm);
+  
+  --font-sans: var(--font-body);
+  --font-heading: var(--font-display);
+}
