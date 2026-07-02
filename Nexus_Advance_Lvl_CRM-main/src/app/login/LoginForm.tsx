@@ -2,7 +2,9 @@
 
 import { FormEvent, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter, useSearchParams } from 'next/navigation';
+import { ArrowLeft } from 'lucide-react';
 
 export function LoginForm() {
   const router = useRouter();
@@ -45,8 +47,24 @@ export function LoginForm() {
   };
 
   return (
-    <div className="min-h-dvh flex items-center justify-center bg-[var(--bg-base)] p-6">
-      <div className="w-full max-w-md bg-[var(--bg-surface)] border border-[var(--border-subtle)] rounded-2xl p-8 shadow-xl">
+    <div className="min-h-dvh flex flex-col items-center justify-center bg-[var(--bg-base)] p-6">
+      {/* Clickable Logo above card */}
+      <Link href="/" className="flex items-center gap-3 mb-6 group transition hover:scale-[1.02]">
+        <div className="relative w-10 h-10 rounded-xl overflow-hidden shadow-md flex items-center justify-center bg-white border border-neutral-100">
+          <Image src="/icon.png" alt="Vlocal Logo" fill className="object-cover" />
+        </div>
+        <span className="font-display text-lg font-bold text-[var(--text-primary)] tracking-tight">
+          Vlocal<span className="text-[var(--accent)] italic">Portal</span>
+        </span>
+      </Link>
+
+      <div className="w-full max-w-md bg-[var(--bg-surface)] border border-[var(--border-subtle)] rounded-2xl p-8 shadow-xl relative">
+        {/* Back Button inside card */}
+        <Link href="/" className="inline-flex items-center gap-1.5 text-xs text-[var(--text-secondary)] hover:text-[var(--text-primary)] mb-6 transition font-bold uppercase tracking-wider">
+          <ArrowLeft size={14} />
+          Back to Portal
+        </Link>
+
         <h1 className="text-2xl font-bold text-[var(--text-primary)] mb-2">Sign in</h1>
         <p className="text-sm text-[var(--text-secondary)] mb-6">
           Access your admin or client dashboard.
