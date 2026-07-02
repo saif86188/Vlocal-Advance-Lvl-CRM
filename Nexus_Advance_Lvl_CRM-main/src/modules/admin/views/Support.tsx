@@ -168,7 +168,7 @@ export function Support() {
                        <div className={`max-w-[85%] p-5 md:p-6 rounded-[24px] md:rounded-[32px] shadow-sm relative ${msg.senderRole === 'admin' ? 'bg-neutral-900 text-white rounded-tr-none' : 'bg-white border border-neutral-100 text-neutral-900 rounded-tl-none'}`}>
                           <p className="text-sm leading-relaxed">{msg.content}</p>
                           <span className={`block mt-3 text-[9px] font-black uppercase tracking-widest ${msg.senderRole === 'admin' ? 'text-white/40' : 'text-neutral-400'}`}>
-                             {msg.senderRole === 'admin' ? 'Vlocal Core Admin' : 'Client Personnel'} • {new Date(msg.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                             {msg.senderRole === 'admin' ? 'Vlocal Core Admin' : 'Client Personnel'} • {new Date(msg.timestamp).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}
                           </span>
                        </div>
                     </div>

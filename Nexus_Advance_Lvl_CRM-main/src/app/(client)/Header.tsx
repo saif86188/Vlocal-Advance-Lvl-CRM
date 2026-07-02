@@ -188,7 +188,7 @@ export function Header() {
                          <div className="flex-1 space-y-1 min-w-0">
                             <h5 className="text-[12px] font-black text-neutral-900 truncate tracking-tight">{notif.title}</h5>
                             <p className="text-[11px] font-medium text-neutral-500 line-clamp-2 leading-snug">{notif.message}</p>
-                            <span className="text-[9px] font-black uppercase tracking-widest text-neutral-400 block mt-1">{new Date(notif.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+                            <span className="text-[9px] font-black uppercase tracking-widest text-neutral-400 block mt-1">{new Date(notif.timestamp).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</span>
                          </div>
                       </div>
                     ))

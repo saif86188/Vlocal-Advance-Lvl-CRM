@@ -43,7 +43,7 @@ export function ClientDashboardHome() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="rounded-xl border border-[var(--border-default)] bg-white p-4">
           <p className="text-xs uppercase text-[var(--text-muted)]">Assigned Projects</p>
-          <p className="text-2xl font-semibold mt-1">{data?.projects.length ?? 0}</p>
+          <p className="text-2xl font-semibold mt-1">{data?.projects?.length ?? 0}</p>
         </div>
         <div className="rounded-xl border border-[var(--border-default)] bg-white p-4">
           <p className="text-xs uppercase text-[var(--text-muted)]">Pending Tasks</p>
@@ -58,7 +58,7 @@ export function ClientDashboardHome() {
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
         <div className="rounded-xl border border-[var(--border-default)] bg-white p-4">
           <h2 className="text-lg font-semibold mb-3">Assigned Projects</h2>
-          {data?.projects.length ? (
+          {data?.projects?.length ? (
             <ul className="space-y-2">
               {data.projects.map((project) => (
                 <li key={project._id} className="border-b border-[var(--border-subtle)] pb-2 last:border-b-0">
@@ -75,7 +75,7 @@ export function ClientDashboardHome() {
         </div>
         <div className="rounded-xl border border-[var(--border-default)] bg-white p-4">
           <h2 className="text-lg font-semibold mb-3">Notifications</h2>
-          {data?.notifications.length ? (
+          {data?.notifications?.length ? (
             <ul className="space-y-2">
               {data.notifications.map((note) => (
                 <li key={note._id} className="border-b border-[var(--border-subtle)] pb-2 last:border-b-0">
