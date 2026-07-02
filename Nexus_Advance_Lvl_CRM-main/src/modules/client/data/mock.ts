@@ -11,21 +11,21 @@ import {
 export const mockUsers: User[] = [
   {
     id: 'u-1',
-    name: 'Sarah Jenkins',
-    email: 'sarah@apex-corp.com',
+    name: 'saif',
+    email: 'saif@vlocal.com',
     role: 'client',
-    companyName: 'Apex Corp',
+    companyName: 'Vlocal Corp',
     createdAt: '2024-01-15T10:00:00Z',
-    avatarUrl: 'https://i.pravatar.cc/150?u=sarah'
+    avatarUrl: 'https://avatar.iran.liara.run/public/boy?username=saif'
   },
   {
     id: 'u-2',
-    name: 'Michael Chen',
-    email: 'michael@nova.io',
+    name: 'saif',
+    email: 'saif@vlocal.com',
     role: 'client',
-    companyName: 'Nova Technologies',
+    companyName: 'Vlocal Technologies',
     createdAt: '2024-02-20T11:00:00Z',
-    avatarUrl: 'https://i.pravatar.cc/150?u=michael'
+    avatarUrl: 'https://avatar.iran.liara.run/public/boy?username=saif'
   },
   {
     id: 'a-1',

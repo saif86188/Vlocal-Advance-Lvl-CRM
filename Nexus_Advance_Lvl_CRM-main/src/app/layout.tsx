@@ -5,8 +5,8 @@ import '@/styles/theme.css';
 import ThemeRegistry from './registry/theme-registry';
 
 export const metadata: Metadata = {
-  title: 'NexusOS | Client Dashboard',
-  description: 'NexusOS Customer Relationship Operating System',
+  title: 'VlocalOS | Client Dashboard',
+  description: 'VlocalOS Customer Relationship Operating System',
   icons: {
     icon: '/icon.png',
     apple: '/icon.png',

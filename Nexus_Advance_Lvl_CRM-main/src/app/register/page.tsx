@@ -6,11 +6,11 @@ import { useRouter } from 'next/navigation';
 
 export default function RegisterPage() {
   const router = useRouter();
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [name, setName] = useState('saif');
+  const [email, setEmail] = useState('saif@vlocal.com');
+  const [password, setPassword] = useState('saifpassword123');
   const [role, setRole] = useState<'admin' | 'client'>('client');
-  const [company, setCompany] = useState('');
+  const [company, setCompany] = useState('saif Corp');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 

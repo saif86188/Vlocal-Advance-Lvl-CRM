@@ -68,7 +68,7 @@ export function Overview() {
             >
               <ShieldCheck className="h-6 w-6 text-blue-400" />
             </motion.div>
-            <h1 className="text-5xl md:text-6xl font-display font-black tracking-tighter text-neutral-900 uppercase">Nexus Core</h1>
+            <h1 className="text-5xl md:text-6xl font-display font-black tracking-tighter text-neutral-900 uppercase">Vlocal Core</h1>
           </div>
           <p className="text-sm font-bold text-neutral-400 max-w-lg leading-relaxed uppercase tracking-widest">Global Administrator Command. Node intelligence operational.</p>
         </div>

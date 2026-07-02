@@ -12,7 +12,7 @@ import { toast } from 'sonner';
 
 const tabs = [
   { id: 'general', label: 'Intelligence Hub', icon: Globe, color: 'text-blue-500' },
-  { id: 'nodes', label: 'Nexus Nodes', icon: Cpu, color: 'text-emerald-500' },
+  { id: 'nodes', label: 'Vlocal Nodes', icon: Cpu, color: 'text-emerald-500' },
   { id: 'security', label: 'Security & Audit', icon: Shield, color: 'text-rose-500' },
   { id: 'ops', label: 'Automated Ops', icon: Zap, color: 'text-amber-500' },
 ];
@@ -93,7 +93,7 @@ export default function SettingsPage() {
             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-[40px] -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-1000" />
             <div className="flex items-center gap-3 mb-4">
               <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-[9px] font-black uppercase tracking-[0.3em] text-white/40">Nexus Health</span>
+              <span className="text-[9px] font-black uppercase tracking-[0.3em] text-white/40">Vlocal Health</span>
             </div>
             <h3 className="text-xl font-display font-bold mb-1">Node v4.0.2</h3>
             <p className="text-[10px] font-black text-white/30 uppercase tracking-widest">Protocol: APEX-Alpha</p>
@@ -127,7 +127,7 @@ export default function SettingsPage() {
                           value={state.settings.workspaceName}
                           onChange={(e) => handleUpdate({ workspaceName: e.target.value })}
                           className="vlocal-input w-full bg-neutral-50/50 border-neutral-100 focus:bg-white rounded-2xl px-6 font-bold"
-                          placeholder="Nexus Core Enterprise"
+                          placeholder="Vlocal Core Enterprise"
                         />
                       </div>
                       <div className="space-y-3">

@@ -121,7 +121,7 @@ function getInitialState(): AdminState {
     ],
     teamMembers: mockTeamMembers,
     settings: {
-      workspaceName: 'Nexus Core Enterprise',
+      workspaceName: 'Vlocal Core Enterprise',
       maintenanceMode: false,
       twoFactorAuth: true,
       auditLogging: true,
@@ -130,13 +130,13 @@ function getInitialState(): AdminState {
       apiCache: true,
     },
     adminProfile: {
-      name: 'Aditya Vardhan',
-      email: 'aditya@nexus-core.com',
+      name: 'saif',
+      email: 'saif@vlocal.com',
       role: 'Global Administrator',
-      avatar: 'AV',
+      avatar: 'S',
       phone: '+91 98765 43210',
       location: 'Mumbai, India',
-      bio: 'Leading the digital transformation and node orchestration for the Nexus Core ecosystem.',
+      bio: 'Leading the digital transformation and node orchestration for the Vlocal Core ecosystem.',
       joinedAt: '2025-01-12T08:00:00Z'
     },
     notifications: [

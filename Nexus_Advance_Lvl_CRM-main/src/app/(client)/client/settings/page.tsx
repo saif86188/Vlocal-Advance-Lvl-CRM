@@ -90,7 +90,7 @@ export default function ClientSettingsPage() {
           <div className="mt-8 p-8 rounded-[40px] bg-blue-600 text-white shadow-2xl relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-[40px] -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-1000" />
             <h3 className="text-xl font-display font-bold mb-1">Partner Tier: Gold</h3>
-            <p className="text-[10px] font-black text-white/60 uppercase tracking-widest">Nexus Partner Program v4.0</p>
+            <p className="text-[10px] font-black text-white/60 uppercase tracking-widest">Vlocal Partner Program v4.0</p>
           </div>
         </div>
 
@@ -217,7 +217,7 @@ export default function ClientSettingsPage() {
                           <div className="flex items-center justify-between">
                              <div className="space-y-1">
                                 <h4 className="text-sm font-black uppercase tracking-widest text-neutral-900">Marketing Intelligence</h4>
-                                <p className="text-[10px] font-bold text-neutral-400 uppercase">Nexus insights and strategies</p>
+                                <p className="text-[10px] font-bold text-neutral-400 uppercase">Vlocal insights and strategies</p>
                              </div>
                              <button 
                                 onClick={() => handleUpdate({ marketingEmails: !state.settings.marketingEmails })}

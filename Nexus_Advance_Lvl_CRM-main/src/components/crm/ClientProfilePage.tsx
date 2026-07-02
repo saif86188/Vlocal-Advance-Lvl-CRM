@@ -14,10 +14,10 @@ export function ClientProfilePage() {
       const json = await res.json();
       if (res.ok && json.user) {
         setProfile({
-          name: json.user.name ?? '',
-          email: json.user.email ?? '',
-          company: json.user.company ?? '',
-          phone: json.user.phone ?? '',
+          name: json.user.name || 'saif',
+          email: json.user.email || 'saif@vlocal.com',
+          company: json.user.company || 'saif Corp',
+          phone: json.user.phone || '+1 (555) 000-1234',
         });
       }
       setLoading(false);

@@ -31,12 +31,12 @@ export function AdminClientsPage() {
   const [showCreate, setShowCreate] = useState(false);
 
   const [form, setForm] = useState({
-    name: '',
-    email: '',
-    password: '',
-    companyName: '',
-    contactName: '',
-    phone: '',
+    name: 'saif',
+    email: 'saif@vlocal.com',
+    password: 'saifpassword123',
+    companyName: 'saif Corp',
+    contactName: 'saif',
+    phone: '+1 (555) 000-1234',
   });
 
   const load = async () => {
