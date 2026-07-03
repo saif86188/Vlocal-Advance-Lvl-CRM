@@ -48,8 +48,8 @@ export function Header() {
   const [isNotifOpen, setIsNotifOpen] = useState(false);
   const [showSticky, setShowSticky] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
 
-  // Scroll direction detection for floating header
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -65,6 +65,20 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
+  const handleLogout = async () => {
+    try {
+      const res = await fetch('/api/auth/logout', { method: 'POST' });
+      if (res.ok) {
+        toast.success('Logged out successfully');
+        window.location.href = '/';
+      } else {
+        toast.error('Failed to log out');
+      }
+    } catch {
+      toast.error('Network error logging out');
+    }
+  };
+
   return (
     <>
       <header className={`fixed top-0 left-0 right-0 z-[1000] h-[var(--header-height)] transition-all duration-300 flex items-center justify-between px-4 md:px-8 shrink-0 select-none backdrop-blur-xl ${
@@ -72,12 +86,15 @@ export function Header() {
       }`}>
         {/* Left: Brand/Logo */}
         <div className="flex items-center gap-3">
-          <Link 
-            href="/" 
-            className="border-2 border-neutral-900 bg-white/90 hover:bg-white rounded-full px-4 md:px-6 py-2 flex items-center justify-center transition-all duration-200 shadow-sm hover:shadow-md hover:scale-[1.02]"
+          <button 
+            onClick={(e) => {
+              e.preventDefault();
+              setShowLogoutConfirm(true);
+            }}
+            className="border-2 border-neutral-900 bg-white/90 hover:bg-white rounded-full px-4 md:px-6 py-2 flex items-center justify-center transition-all duration-200 shadow-sm hover:shadow-md hover:scale-[1.02] cursor-pointer"
           >
             <span className="font-display font-black text-lg md:text-xl tracking-tighter text-neutral-900">Vlocal<span className="text-[var(--accent)] font-bold">OS</span></span>
-          </Link>
+          </button>
         </div>
 
         {/* Center: Navigation Pill (Desktop Only) */}
@@ -278,12 +295,49 @@ export function Header() {
           
           {/* Sign Out Section at bottom */}
           <div className="p-6 border-t border-neutral-100 bg-white shrink-0">
-            <button className="w-full py-4 rounded-2xl bg-neutral-900 hover:bg-black text-white font-bold text-xs uppercase tracking-widest shadow-md transition-all active:scale-95 cursor-pointer">
+            <button 
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                setShowLogoutConfirm(true);
+              }}
+              className="w-full py-4 rounded-2xl bg-neutral-900 hover:bg-black text-white font-bold text-xs uppercase tracking-widest shadow-md transition-all active:scale-95 cursor-pointer"
+            >
               Sign Out
             </button>
           </div>
         </div>
       </div>
+
+      {showLogoutConfirm && (
+        <div className="fixed inset-0 z-[10000] flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200" onClick={() => setShowLogoutConfirm(false)} />
+          <div className="bg-white border border-neutral-200 rounded-[32px] w-full max-w-[400px] shadow-2xl p-6 relative z-10 text-center space-y-6 animate-in fade-in zoom-in-95 duration-200">
+            <div className="w-14 h-14 rounded-full bg-red-50 flex items-center justify-center text-red-500 mx-auto border border-red-100">
+              <AlertCircle size={26} />
+            </div>
+            <div className="space-y-2">
+              <h3 className="text-lg font-black text-neutral-800 leading-tight">Switch Portal / Log Out</h3>
+              <p className="text-xs text-neutral-500 font-medium leading-relaxed">
+                You are currently logged in. To switch between portals or return to the landing selector, you must terminate your session.
+              </p>
+            </div>
+            <div className="flex gap-3 pt-2">
+              <button 
+                onClick={() => setShowLogoutConfirm(false)}
+                className="flex-1 py-3 border border-neutral-300 rounded-xl font-bold text-xs uppercase tracking-widest text-neutral-600 hover:bg-neutral-50 cursor-pointer transition"
+              >
+                Cancel
+              </button>
+              <button 
+                onClick={handleLogout}
+                className="flex-1 py-3 bg-neutral-900 hover:bg-black text-white rounded-xl font-bold text-xs uppercase tracking-widest cursor-pointer transition shadow-lg"
+              >
+                Log Out
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
