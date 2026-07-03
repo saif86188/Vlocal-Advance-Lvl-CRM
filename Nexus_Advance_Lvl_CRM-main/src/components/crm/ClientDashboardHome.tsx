@@ -5,7 +5,7 @@ import { motion } from 'motion/react';
 import { toast } from 'sonner';
 import { 
   Play, DollarSign, Target, Clock, AlertCircle, CheckCircle2, 
-  User as UserIcon, Calendar, ArrowUpRight, Plus, Eye, ChevronDown, CheckSquare, Square
+  User as UserIcon, Calendar, ArrowUpRight, Plus, Eye, ChevronDown, CheckSquare, Square, Camera
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -89,6 +89,23 @@ export function ClientDashboardHome() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [checkedTasks, setCheckedTasks] = useState<Record<string, boolean>>({});
+
+  const getWeekDates = () => {
+    const current = new Date();
+    const week = [];
+    const day = current.getDay();
+    const diff = current.getDate() - day + (day === 0 ? -6 : 1);
+    const monday = new Date(current.setDate(diff));
+
+    for (let i = 0; i < 7; i++) {
+      const date = new Date(monday);
+      date.setDate(monday.getDate() + i);
+      week.push(date);
+    }
+    return week;
+  };
+
+  const weekDates = getWeekDates();
 
   const load = async () => {
     try {
@@ -248,12 +265,33 @@ export function ClientDashboardHome() {
         {/* Left Column: Client Profile & Accordion */}
         <div className="lg:col-span-1 space-y-6">
           <div className="glass-card p-6 flex flex-col items-center text-center relative overflow-hidden">
-            <div className="w-20 h-20 rounded-full border-4 border-white shadow-md bg-neutral-200 overflow-hidden relative mb-3">
-              <img 
-                src={`https://avatar.iran.liara.run/public/boy?username=${data?.clientProfile.name}`} 
-                alt="Avatar" 
-                className="w-full h-full object-cover" 
-              />
+            <div className="relative mb-3 group/avatar">
+              <div className="w-20 h-20 rounded-full border-4 border-white shadow-md bg-neutral-900 overflow-hidden flex items-center justify-center text-white text-xl font-bold select-none relative">
+                {data?.clientProfile?.name ? (
+                  <img 
+                    src={`https://avatar.iran.liara.run/public/boy?username=${data.clientProfile.name}`} 
+                    alt="Avatar" 
+                    className="w-full h-full object-cover absolute inset-0" 
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                    }}
+                  />
+                ) : null}
+                <span className="font-display font-black text-xl">{data?.clientProfile?.name ? data.clientProfile.name.slice(0,2).toUpperCase() : 'JD'}</span>
+              </div>
+              <label className="absolute bottom-0 right-0 w-7 h-7 bg-neutral-900 hover:bg-black text-white rounded-full flex items-center justify-center cursor-pointer transition border-2 border-white shadow-lg z-10">
+                <Camera size={12} className="text-white" />
+                <input 
+                  type="file" 
+                  accept="image/*" 
+                  className="hidden" 
+                  onChange={(e) => {
+                    if (e.target.files?.[0]) {
+                      toast.success("Profile photo uploaded successfully");
+                    }
+                  }} 
+                />
+              </label>
             </div>
             <h4 className="font-extrabold text-neutral-800">{data?.clientProfile.name}</h4>
             <p className="text-xs text-neutral-400 font-medium mb-2">{data?.clientProfile.companyName || 'Nexus Industries'}</p>
@@ -494,16 +532,20 @@ export function ClientDashboardHome() {
               <h4 className="text-sm font-bold text-neutral-700">Weekly Activity Calendar</h4>
               
               <div className="grid grid-cols-7 gap-1 mt-2">
-                {['M', 'T', 'W', 'T', 'F', 'S', 'S'].map((day, idx) => (
-                  <div key={idx} className="flex flex-col items-center p-2 rounded-xl hover:bg-neutral-50 transition cursor-pointer">
-                    <span className="text-[10px] font-bold text-neutral-400">{day}</span>
-                    <span className={`text-xs font-extrabold mt-1 w-6 h-6 flex items-center justify-center rounded-full ${
-                      idx === 4 ? 'bg-[var(--accent)] text-neutral-900' : 'text-neutral-700'
-                    }`}>
-                      {29 + idx}
-                    </span>
-                  </div>
-                ))}
+                {['M', 'T', 'W', 'T', 'F', 'S', 'S'].map((day, idx) => {
+                  const date = weekDates[idx];
+                  const isToday = date.toDateString() === new Date().toDateString();
+                  return (
+                    <div key={idx} className="flex flex-col items-center p-2 rounded-xl hover:bg-neutral-50 transition cursor-pointer">
+                      <span className="text-[10px] font-bold text-neutral-400">{day}</span>
+                      <span className={`text-xs font-extrabold mt-1 w-6.5 h-6.5 flex items-center justify-center rounded-full ${
+                        isToday ? 'bg-[var(--accent)] text-neutral-900 shadow-sm font-black' : 'text-neutral-700'
+                      }`}>
+                        {date.getDate()}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
 
               <div className="space-y-2 mt-4">

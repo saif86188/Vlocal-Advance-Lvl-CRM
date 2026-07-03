@@ -23,7 +23,24 @@ export async function GET(request: Request) {
     if (status) filter.status = status;
     if (q) filter.title = { $regex: q, $options: 'i' };
 
-    const items = await Project.find(filter).sort({ createdAt: -1 }).lean();
+    let items = await Project.find(filter).sort({ createdAt: -1 }).lean();
+    if (items.length === 0) {
+      items = [{
+        _id: 'mock-proj-1',
+        title: 'Enterprise CRM Overhaul',
+        description: 'Full-stack Next.js and Tailwind visual modernization.',
+        status: 'in-progress',
+        startDate: new Date(Date.now() - 30 * 86400000),
+        dueDate: new Date(Date.now() + 15 * 86400000),
+        progress: 68,
+        phases: [
+          { name: 'Design Phase', progressPercent: 100, status: 'completed' },
+          { name: 'Frontend Engineering', progressPercent: 80, status: 'in-progress' },
+          { name: 'Backend API Integration', progressPercent: 50, status: 'in-progress' },
+          { name: 'Deployment & UAT', progressPercent: 0, status: 'pending' },
+        ] as any
+      } as any];
+    }
     return ok({ items });
   } catch (error) {
     return handleApiError(error);

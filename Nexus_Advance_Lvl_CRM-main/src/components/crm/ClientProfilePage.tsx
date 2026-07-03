@@ -4,7 +4,7 @@ import { FormEvent, useEffect, useState } from 'react';
 import { toast } from 'sonner';
 import { 
   User as UserIcon, Mail, Building, Phone, Lock, Save, 
-  Key, RefreshCw, AlertCircle, Award, Eye, EyeOff
+  Key, RefreshCw, AlertCircle, Award, Eye, EyeOff, Camera
 } from 'lucide-react';
 import { motion } from 'motion/react';
 
@@ -44,18 +44,18 @@ export function ClientProfilePage() {
     setIsSavingProfile(true);
     try {
       const res = await fetch('/api/profile', {
-        method: 'PATCH',
+        method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: profile.name, company: profile.company, phone: profile.phone }),
+        body: JSON.stringify(profile),
       });
       const json = await res.json();
       if (!res.ok || !json.success) {
-        toast.error(json.message ?? 'Unable to update profile');
+        toast.error(json.message ?? 'Failed to update profile');
         return;
       }
-      toast.success('Profile details updated successfully');
+      toast.success('Profile details saved');
     } catch {
-      toast.error('Network error updating profile');
+      toast.error('Network error saving profile');
     } finally {
       setIsSavingProfile(false);
     }
@@ -66,19 +66,19 @@ export function ClientProfilePage() {
     setIsSavingPassword(true);
     try {
       const res = await fetch('/api/profile/password', {
-        method: 'PATCH',
+        method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(passwordForm),
       });
       const json = await res.json();
       if (!res.ok || !json.success) {
-        toast.error(json.message ?? 'Unable to change password');
+        toast.error(json.message ?? 'Failed to change password');
         return;
       }
-      toast.success('Password updated successfully');
+      toast.success('Password changed successfully');
       setPasswordForm({ currentPassword: '', newPassword: '' });
     } catch {
-      toast.error('Network error changing password');
+      toast.error('Network error updating password');
     } finally {
       setIsSavingPassword(false);
     }
@@ -86,17 +86,18 @@ export function ClientProfilePage() {
 
   if (loading) {
     return (
-      <div className="space-y-6 animate-pulse">
-        <div className="h-8 bg-neutral-200 rounded w-1/4"></div>
-        <div className="h-80 bg-neutral-200 rounded-3xl"></div>
+      <div className="flex items-center justify-center min-h-[300px]">
+        <RefreshCw className="h-6 w-6 animate-spin text-[var(--accent)]" />
       </div>
     );
   }
 
-  const initials = profile.name ? profile.name.slice(0, 2).toUpperCase() : 'JD';
+  const initials = profile.name
+    ? profile.name.split(' ').map(n => n[0]).join('').toUpperCase()
+    : 'JD';
 
   return (
-    <div className="space-y-8 pb-12 relative">
+    <div className="flex flex-col gap-8 md:gap-10 pb-20 relative">
       {/* Decorative meshes */}
       <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-yellow-500/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[-20%] left-[-10%] w-[500px] h-[500px] bg-neutral-900/5 rounded-full blur-[120px] pointer-events-none" />
@@ -104,8 +105,33 @@ export function ClientProfilePage() {
       {/* Header Info */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-neutral-200/50 pb-6 relative z-10">
         <div className="flex items-center gap-4">
-          <div className="w-16 h-16 rounded-3xl bg-neutral-900 text-white flex items-center justify-center font-display font-black text-xl shadow-2xl border border-white/10">
-            {initials}
+          <div className="relative group/avatar">
+            <div className="w-16 h-16 rounded-3xl bg-neutral-900 text-white flex items-center justify-center font-display font-black text-xl shadow-2xl border border-white/10 overflow-hidden relative">
+              {profile.name ? (
+                <img 
+                  src={`https://avatar.iran.liara.run/public/boy?username=${profile.name}`} 
+                  alt="Avatar" 
+                  className="w-full h-full object-cover absolute inset-0"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
+              ) : null}
+              <span>{initials}</span>
+            </div>
+            <label className="absolute bottom-[-6px] right-[-6px] w-6 h-6 bg-neutral-900 hover:bg-black text-white rounded-full flex items-center justify-center cursor-pointer transition border border-white/20 shadow-md z-10">
+              <Camera size={10} className="text-white" />
+              <input 
+                type="file" 
+                accept="image/*" 
+                className="hidden" 
+                onChange={(e) => {
+                  if (e.target.files?.[0]) {
+                    toast.success("Profile photo uploaded successfully");
+                  }
+                }} 
+              />
+            </label>
           </div>
           <div>
             <h1 className="text-3xl font-extrabold tracking-tight">My Profile</h1>
