@@ -5,7 +5,7 @@ import {
   ResponsiveContainer, LineChart, Line, BarChart, Bar, 
   PieChart, Pie, Cell, XAxis, YAxis, Tooltip, Legend 
 } from 'recharts';
-import { TrendingUp, Users, Briefcase, Award } from 'lucide-react';
+import { TrendingUp, Users, Briefcase, Award, Clock } from 'lucide-react';
 
 interface ChartDataItem {
   month: string;
