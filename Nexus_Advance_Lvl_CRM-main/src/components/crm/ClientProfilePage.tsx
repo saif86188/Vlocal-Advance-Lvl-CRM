@@ -12,12 +12,12 @@ export function ClientProfilePage() {
     const load = async () => {
       const res = await fetch('/api/profile', { cache: 'no-store' });
       const json = await res.json();
-      if (res.ok && json.user) {
+      if (res.ok && json.success && json.data.user) {
         setProfile({
-          name: json.user.name || 'saif',
-          email: json.user.email || 'saif@vlocal.com',
-          company: json.user.company || 'saif Corp',
-          phone: json.user.phone || '+1 (555) 000-1234',
+          name: json.data.user.name || '',
+          email: json.data.user.email || '',
+          company: json.data.user.company || json.data.clientProfile?.companyName || '',
+          phone: json.data.user.phone || json.data.clientProfile?.phone || '',
         });
       }
       setLoading(false);
@@ -33,8 +33,8 @@ export function ClientProfilePage() {
       body: JSON.stringify({ name: profile.name, company: profile.company, phone: profile.phone }),
     });
     const json = await res.json();
-    if (!res.ok) {
-      toast.error(json.error ?? 'Unable to update profile');
+    if (!res.ok || !json.success) {
+      toast.error(json.message ?? 'Unable to update profile');
       return;
     }
     toast.success('Profile updated');
@@ -48,15 +48,15 @@ export function ClientProfilePage() {
       body: JSON.stringify(passwordForm),
     });
     const json = await res.json();
-    if (!res.ok) {
-      toast.error(json.error ?? 'Unable to change password');
+    if (!res.ok || !json.success) {
+      toast.error(json.message ?? 'Unable to change password');
       return;
     }
     toast.success('Password updated');
     setPasswordForm({ currentPassword: '', newPassword: '' });
   };
 
-  if (loading) return <p className="text-sm">Loading profile...</p>;
+  if (loading) return <p className="text-sm text-neutral-500 font-semibold p-6">Loading profile...</p>;
 
   return (
     <div className="space-y-6">

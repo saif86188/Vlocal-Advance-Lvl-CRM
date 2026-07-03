@@ -28,7 +28,10 @@ export function verifyToken(token: string): TokenPayload | null {
     }
 
     return decoded as TokenPayload;
-  } catch {
+  } catch (error: any) {
+    if (error?.name === 'TokenExpiredError') {
+      throw new Error('TOKEN_EXPIRED');
+    }
     return null;
   }
 }

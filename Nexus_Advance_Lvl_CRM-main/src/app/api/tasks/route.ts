@@ -21,7 +21,12 @@ export async function GET(request: Request) {
       filter.projectId = new Types.ObjectId(projectId);
     }
 
-    const items = await Task.find(filter).sort({ createdAt: -1 }).lean();
+    const items = await Task.find(filter)
+      .populate('assignedTo', 'name avatarUrl email')
+      .populate('projectId', 'title')
+      .sort({ createdAt: -1 })
+      .lean();
+
     return ok({ items });
   } catch (error) {
     return handleApiError(error);
@@ -51,7 +56,7 @@ export async function POST(request: Request) {
       timestamp: new Date(),
     });
 
-    return ok({ item: task }, 201);
+    return ok({ item: task }, 'Task created successfully', 201);
   } catch (error) {
     return handleApiError(error);
   }

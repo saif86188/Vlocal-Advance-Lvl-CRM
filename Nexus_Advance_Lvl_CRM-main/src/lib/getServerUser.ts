@@ -43,17 +43,21 @@ export async function getServerUser(): Promise<SafeUser | null> {
     return null;
   }
 
-  const payload = verifyToken(token);
-  if (!payload) {
+  try {
+    const payload = verifyToken(token);
+    if (!payload) {
+      return null;
+    }
+
+    await connectDB();
+
+    const user = await User.findById(payload.userId).select('-password');
+    if (!user) {
+      return null;
+    }
+
+    return toSafeUser(user);
+  } catch {
     return null;
   }
-
-  await connectDB();
-
-  const user = await User.findById(payload.userId).select('-password');
-  if (!user) {
-    return null;
-  }
-
-  return toSafeUser(user);
 }

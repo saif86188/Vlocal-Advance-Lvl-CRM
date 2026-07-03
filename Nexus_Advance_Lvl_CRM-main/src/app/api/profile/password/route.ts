@@ -22,10 +22,10 @@ export async function PATCH(request: Request) {
     const valid = await comparePassword(input.currentPassword, user.password);
     if (!valid) return err('Current password is incorrect', 401);
 
-    user.password = await hashPassword(input.newPassword);
+    user.password = input.newPassword;
     await user.save();
 
-    return ok({ success: true });
+    return ok({ success: true }, 'Password updated successfully');
   } catch (error) {
     return handleApiError(error);
   }
