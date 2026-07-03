@@ -38,7 +38,7 @@ export function LoginPage() {
                   id="email"
                   type="email"
                   placeholder="admin@siaf.com"
-                  className="vlocal-input w-full pl-11"
+                  className="vlocal-input w-full !pl-11"
                 />
               </div>
             </div>
@@ -55,7 +55,7 @@ export function LoginPage() {
                   id="password"
                   type={showPassword ? "text" : "password"}
                   placeholder="••••••••"
-                  className="vlocal-input w-full pl-11 pr-12"
+                  className="vlocal-input w-full !pl-11 !pr-12"
                 />
                 <button
                   type="button"

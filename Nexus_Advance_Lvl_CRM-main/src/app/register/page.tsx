@@ -4,7 +4,7 @@ import { FormEvent, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { ArrowLeft, User as UserIcon, Mail, Lock, Building2, Phone, Loader2 } from 'lucide-react';
+import { ArrowLeft, User as UserIcon, Mail, Lock, Building2, Phone, Loader2, Eye, EyeOff } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export default function RegisterPage() {
@@ -17,6 +17,7 @@ export default function RegisterPage() {
   const [phone, setPhone] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -176,7 +177,7 @@ export default function RegisterPage() {
                 <input
                   id="name"
                   type="text"
-                  className="vlocal-input input-glow w-full pl-11"
+                  className="vlocal-input input-glow w-full !pl-11"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required
@@ -197,7 +198,7 @@ export default function RegisterPage() {
                 <input
                   id="email"
                   type="email"
-                  className="vlocal-input input-glow w-full pl-11"
+                  className="vlocal-input input-glow w-full !pl-11"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -219,14 +220,21 @@ export default function RegisterPage() {
               <div className="relative">
                 <input
                   id="password"
-                  type="password"
-                  className="vlocal-input input-glow w-full pl-11"
+                  type={showPassword ? 'text' : 'password'}
+                  className="vlocal-input input-glow w-full !pl-11 !pr-12"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   minLength={8}
                   required
                 />
                 <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-400" size={16} />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-600 transition cursor-pointer"
+                >
+                  {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+                </button>
               </div>
             </motion.div>
 
@@ -263,7 +271,7 @@ export default function RegisterPage() {
                 <input
                   id="company"
                   type="text"
-                  className="vlocal-input input-glow w-full pl-11"
+                  className="vlocal-input input-glow w-full !pl-11"
                   value={company}
                   onChange={(e) => setCompany(e.target.value)}
                 />
@@ -283,7 +291,7 @@ export default function RegisterPage() {
                 <input
                   id="phone"
                   type="tel"
-                  className="vlocal-input input-glow w-full pl-11"
+                  className="vlocal-input input-glow w-full !pl-11"
                   placeholder="+1 (555) 000-0000"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}

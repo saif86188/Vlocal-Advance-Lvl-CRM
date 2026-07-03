@@ -7,7 +7,7 @@ import {
   LayoutDashboard, Users, Briefcase, FileText, IndianRupee,
   Settings, ClipboardList, TrendingUp, BarChart3, MessageSquare, 
   ChevronDown, Bell, ShieldCheck, Database, Hammer,
-  Megaphone, MapPin, CreditCard, MessagesSquare, Building2, FileCheck, Menu, X
+  Megaphone, MapPin, CreditCard, MessagesSquare, Building2, FileCheck, Menu, X, AlertCircle
 } from 'lucide-react';
 import { toast } from 'sonner';
 import { useAdminStore } from '@/modules/admin/data/store';

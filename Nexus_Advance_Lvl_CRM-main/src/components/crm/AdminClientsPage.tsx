@@ -160,7 +160,7 @@ export function AdminClientsPage() {
       <form onSubmit={onSearchSubmit} className="flex flex-wrap gap-3 items-center">
         <div className="relative w-72">
           <input 
-            className="vlocal-input w-full pl-11" 
+            className="vlocal-input w-full !pl-11" 
             placeholder="Search clients..." 
             value={search} 
             onChange={(e) => setSearch(e.target.value)} 

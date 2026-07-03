@@ -4,7 +4,7 @@ import { FormEvent, useEffect, useState } from 'react';
 import { toast } from 'sonner';
 import { 
   User as UserIcon, Mail, Building, Phone, Lock, Save, 
-  Key, RefreshCw, AlertCircle, Award
+  Key, RefreshCw, AlertCircle, Award, Eye, EyeOff
 } from 'lucide-react';
 import { motion } from 'motion/react';
 
@@ -14,6 +14,8 @@ export function ClientProfilePage() {
   const [loading, setLoading] = useState(true);
   const [isSavingProfile, setIsSavingProfile] = useState(false);
   const [isSavingPassword, setIsSavingPassword] = useState(false);
+  const [showCurrentPassword, setShowCurrentPassword] = useState(false);
+  const [showNewPassword, setShowNewPassword] = useState(false);
 
   useEffect(() => {
     const load = async () => {
@@ -130,7 +132,7 @@ export function ClientProfilePage() {
                 <label className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-400 px-1">Full Name</label>
                 <div className="relative">
                   <input 
-                    className="vlocal-input w-full pl-11" 
+                    className="vlocal-input w-full !pl-11" 
                     value={profile.name} 
                     onChange={(e) => setProfile({ ...profile, name: e.target.value })} 
                     placeholder="e.g. Saif Client" 
@@ -144,7 +146,7 @@ export function ClientProfilePage() {
                 <label className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-400 px-1">Email Address</label>
                 <div className="relative">
                   <input 
-                    className="vlocal-input w-full pl-11 bg-neutral-50/70 border-neutral-200 cursor-not-allowed opacity-70" 
+                    className="vlocal-input w-full !pl-11 bg-neutral-50/70 border-neutral-200 cursor-not-allowed opacity-70" 
                     value={profile.email} 
                     disabled 
                     placeholder="Email Address" 
@@ -157,7 +159,7 @@ export function ClientProfilePage() {
                 <label className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-400 px-1">Company / Organization</label>
                 <div className="relative">
                   <input 
-                    className="vlocal-input w-full pl-11" 
+                    className="vlocal-input w-full !pl-11" 
                     value={profile.company} 
                     onChange={(e) => setProfile({ ...profile, company: e.target.value })} 
                     placeholder="e.g. Vlocal Corp" 
@@ -170,7 +172,7 @@ export function ClientProfilePage() {
                 <label className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-400 px-1">Phone Number</label>
                 <div className="relative">
                   <input 
-                    className="vlocal-input w-full pl-11" 
+                    className="vlocal-input w-full !pl-11" 
                     value={profile.phone} 
                     onChange={(e) => setProfile({ ...profile, phone: e.target.value })} 
                     placeholder="e.g. +1 (555) 000-0000" 
@@ -196,10 +198,10 @@ export function ClientProfilePage() {
         </form>
 
         {/* Change Password Form */}
-        <form onSubmit={changePassword} className="lg:col-span-5 dark-card p-6 md:p-8 rounded-[32px] md:rounded-[40px] border border-white/5 shadow-xl space-y-6 flex flex-col justify-between text-white">
+        <form onSubmit={changePassword} className="lg:col-span-5 glass-card p-6 md:p-8 rounded-[32px] md:rounded-[40px] border border-white shadow-xl space-y-6 flex flex-col justify-between">
           <div className="space-y-6">
             <div>
-              <h2 className="text-base font-extrabold text-white tracking-tight">Security Credentials</h2>
+              <h2 className="text-base font-extrabold text-neutral-800 tracking-tight">Security Credentials</h2>
               <p className="text-xs text-neutral-400 font-medium mt-0.5">Rotate passwords regularly</p>
             </div>
 
@@ -208,14 +210,21 @@ export function ClientProfilePage() {
                 <label className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-400 px-1">Current Password</label>
                 <div className="relative">
                   <input 
-                    type="password"
-                    className="vlocal-input w-full pl-11 bg-white/5 border-white/10 text-white placeholder-white/30 focus:border-[var(--accent)] focus:ring-[var(--accent)]" 
+                    type={showCurrentPassword ? 'text' : 'password'}
+                    className="vlocal-input w-full !pl-11 !pr-12 bg-neutral-50/50 border-neutral-200 focus:bg-white text-neutral-850 placeholder-neutral-400" 
                     placeholder="Enter current password"
                     value={passwordForm.currentPassword}
                     onChange={(e) => setPasswordForm({ ...passwordForm, currentPassword: e.target.value })}
                     required 
                   />
                   <Lock size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-400" />
+                  <button
+                    type="button"
+                    onClick={() => setShowCurrentPassword(!showCurrentPassword)}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-600 transition cursor-pointer"
+                  >
+                    {showCurrentPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+                  </button>
                 </div>
               </div>
 
@@ -223,8 +232,8 @@ export function ClientProfilePage() {
                 <label className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-400 px-1">New Password</label>
                 <div className="relative">
                   <input 
-                    type="password"
-                    className="vlocal-input w-full pl-11 bg-white/5 border-white/10 text-white placeholder-white/30 focus:border-[var(--accent)] focus:ring-[var(--accent)]" 
+                    type={showNewPassword ? 'text' : 'password'}
+                    className="vlocal-input w-full !pl-11 !pr-12 bg-neutral-50/50 border-neutral-200 focus:bg-white text-neutral-850 placeholder-neutral-400" 
                     placeholder="Minimum 8 characters"
                     minLength={8}
                     value={passwordForm.newPassword}
@@ -232,6 +241,13 @@ export function ClientProfilePage() {
                     required 
                   />
                   <Key size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-400" />
+                  <button
+                    type="button"
+                    onClick={() => setShowNewPassword(!showNewPassword)}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-600 transition cursor-pointer"
+                  >
+                    {showNewPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+                  </button>
                 </div>
               </div>
             </div>
