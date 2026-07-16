@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Link from 'next/link';
 import Image from 'next/image';
@@ -11,10 +11,10 @@ export default function PortalPage() {
       {/* Brand */}
       <div className="flex items-center gap-3 mb-8 md:mb-12 animate-in fade-in slide-in-from-bottom-6 duration-700">
         <div className="relative w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl overflow-hidden shadow-xl flex items-center justify-center bg-white border border-neutral-100">
-          <Image src="/icon.png" alt="Vlocal Logo" fill className="object-cover" priority />
+          <Image src="/icon.png" alt="CODEVATE Logo" fill className="object-cover" priority />
         </div>
         <span className="font-display text-xl md:text-2xl font-bold text-[#171717] tracking-tight">
-          Vlocal<span className="text-[var(--accent)] italic">Portal</span>
+          CODEVATE<span className="text-[var(--accent)] italic">Portal</span>
         </span>
       </div>
 
@@ -42,7 +42,7 @@ export default function PortalPage() {
           <div className="w-14 h-14 md:w-16 md:h-16 rounded-[20px] md:rounded-[22px] bg-[#FDF6E2] border border-[#FBE09C] flex items-center justify-center mb-6 md:mb-8 group-hover:scale-110 group-hover:-rotate-3 group-hover:shadow-lg transition-all duration-500">
             <Monitor className="w-7 h-7 md:w-8 md:h-8 text-neutral-900 stroke-[2.5]" />
           </div>
-          <h2 className="text-2xl md:text-3xl font-display font-bold text-[#171717] mb-3">VlocalOS</h2>
+          <h2 className="text-2xl md:text-3xl font-display font-bold text-[#171717] mb-3">CODEVATEOS</h2>
           <p className="text-sm text-[#737373] leading-relaxed mb-6 md:mb-8 flex-1">
             Access your projects, proposals, payments, and support from one place.
           </p>
@@ -67,7 +67,7 @@ export default function PortalPage() {
           <div className="w-14 h-14 md:w-16 md:h-16 rounded-[20px] md:rounded-[22px] bg-white/10 border border-white/15 flex items-center justify-center mb-6 md:mb-8 group-hover:scale-110 group-hover:rotate-3 group-hover:shadow-lg transition-all duration-500">
             <Settings className="w-7 h-7 md:w-8 md:h-8 text-white stroke-[2.5]" />
           </div>
-          <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-3">VlocalCore</h2>
+          <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-3">CODEVATECore</h2>
           <p className="text-sm text-white/40 leading-relaxed mb-6 md:mb-8 flex-1">
             Manage clients, campaigns, invoices and all platform operations.
           </p>
@@ -81,7 +81,7 @@ export default function PortalPage() {
 
       {/* Footer */}
       <p className="mt-12 md:mt-16 text-[10px] md:text-xs text-[#A3A3A3] animate-in fade-in duration-1000 delay-500">
-        © 2026 Vlocal Platform &nbsp;·&nbsp; All rights reserved
+        © 2026 CODEVATE Platform &nbsp;·&nbsp; All rights reserved
       </p>
 
     </div>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { useAdminStore } from '@/modules/admin/data/store';
 import { MessageSquare, X, Send } from 'lucide-react';
 import { toast } from 'sonner';
@@ -129,7 +129,7 @@ export function Discussions() {
                       : 'bg-[var(--bg-elevated)] border border-[var(--border-default)] text-[var(--text-primary)] rounded-tl-none'
                   }`}>
                     <div className="text-[11px] opacity-70 mb-1">
-                      {msg.senderRole === 'admin' ? 'VLOCAL Team' : 'Client'} • {new Date(msg.timestamp).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}
+                      {msg.senderRole === 'admin' ? 'CODEVATE Team' : 'Client'} • {new Date(msg.timestamp).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}
                     </div>
                     {msg.content}
                   </div>
@@ -140,14 +140,14 @@ export function Discussions() {
             <div className="p-4 border-t border-[var(--border-subtle)]">
               <div className="flex gap-2">
                 <input
-                  className="vlocal-input flex-1 text-[13px]"
+                  className="CODEVATE-input flex-1 text-[13px]"
                   placeholder="Type a message…"
                   value={chatMsg}
                   onChange={e => setChatMsg(e.target.value)}
                   onKeyDown={e => { if (e.key === 'Enter') handleSend(); }}
                 />
                 <button onClick={handleSend}
-                  className="vlocal-btn bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white px-4">
+                  className="CODEVATE-btn bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white px-4">
                   <Send size={16} />
                 </button>
               </div>

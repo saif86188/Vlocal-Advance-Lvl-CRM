@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
@@ -176,7 +176,7 @@ export function ClientDashboardHome() {
         <AlertCircle className="w-12 h-12 text-red-500 mb-3" />
         <h3 className="text-lg font-bold text-neutral-800">Dashboard Error</h3>
         <p className="text-sm text-neutral-500 mt-1">{error}</p>
-        <button onClick={load} className="vlocal-btn bg-neutral-900 text-white mt-4">Retry</button>
+        <button onClick={load} className="CODEVATE-btn bg-neutral-900 text-white mt-4">Retry</button>
       </div>
     );
   }
@@ -217,10 +217,10 @@ export function ClientDashboardHome() {
           <p className="text-sm text-neutral-500 font-medium">Nexus CRM Workspace • Live Updates</p>
         </div>
         <div className="flex gap-2">
-          <Link href="/client/billing" className="vlocal-btn vlocal-btn-sm border border-neutral-300 hover:bg-neutral-100 bg-white font-semibold transition">
+          <Link href="/client/billing" className="CODEVATE-btn CODEVATE-btn-sm border border-neutral-300 hover:bg-neutral-100 bg-white font-semibold transition">
             View Invoices
           </Link>
-          <Link href="/client/support" className="vlocal-btn vlocal-btn-sm bg-neutral-900 text-white font-semibold hover:bg-neutral-800 transition">
+          <Link href="/client/support" className="CODEVATE-btn CODEVATE-btn-sm bg-neutral-900 text-white font-semibold hover:bg-neutral-800 transition">
             Submit Request
           </Link>
         </div>

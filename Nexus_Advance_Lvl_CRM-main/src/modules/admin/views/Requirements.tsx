@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { useAdminStore } from '@/modules/admin/data/store';
 import Link from 'next/link';
 import { X, Download, FileText, Search } from 'lucide-react';
@@ -45,20 +45,20 @@ export function Requirements() {
           <div className="relative flex-1 min-w-[140px]">
             <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--text-muted)]" />
             <input
-              className="vlocal-input pl-8 w-full text-[12.5px]"
+              className="CODEVATE-input pl-8 w-full text-[12.5px]"
               placeholder="Search..."
               value={search}
               onChange={e => setSearch(e.target.value)}
             />
           </div>
-          <select className="vlocal-input flex-1 min-w-[130px] text-[12.5px]" value={statusFilter} onChange={e => setStatusFilter(e.target.value)}>
+          <select className="CODEVATE-input flex-1 min-w-[130px] text-[12.5px]" value={statusFilter} onChange={e => setStatusFilter(e.target.value)}>
             <option value="all">All Status</option>
             <option value="awaiting_review">Awaiting Review</option>
             <option value="reviewed">Reviewed</option>
             <option value="proposal_sent">Proposal Sent</option>
             <option value="draft">Draft</option>
           </select>
-          <select className="vlocal-input flex-1 min-w-[130px] text-[12.5px]" value={priorityFilter} onChange={e => setPriorityFilter(e.target.value)}>
+          <select className="CODEVATE-input flex-1 min-w-[130px] text-[12.5px]" value={priorityFilter} onChange={e => setPriorityFilter(e.target.value)}>
             <option value="all">All Priority</option>
             <option value="urgent">Urgent</option>
             <option value="high">High</option>
@@ -200,12 +200,12 @@ export function Requirements() {
             </div>
 
             <div className="p-5 border-t border-[var(--border-subtle)] flex gap-2 justify-end bg-[var(--bg-surface)]">
-              <button className="vlocal-btn border border-[var(--danger)] text-[var(--danger)] hover:bg-[var(--danger-dim)]">Reject</button>
-              <button className="vlocal-btn border border-[var(--border-default)] hover:bg-[var(--bg-hover)]">Ask Clarification</button>
+              <button className="CODEVATE-btn border border-[var(--danger)] text-[var(--danger)] hover:bg-[var(--danger-dim)]">Reject</button>
+              <button className="CODEVATE-btn border border-[var(--border-default)] hover:bg-[var(--bg-hover)]">Ask Clarification</button>
               <Link
                 href={`/builder?req=${selectedReq.id}`}
                 onClick={() => setSelectedReq(null)}
-                className="vlocal-btn bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white"
+                className="CODEVATE-btn bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white"
               >
                 Create Proposal
               </Link>

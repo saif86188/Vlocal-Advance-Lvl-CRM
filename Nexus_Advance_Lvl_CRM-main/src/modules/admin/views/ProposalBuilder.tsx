@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect, useMemo } from 'react';
 import { useAdminStore } from '@/modules/admin/data/store';
@@ -159,7 +159,7 @@ export function ProposalBuilder() {
             </label>
           </div>
           {showOther && (
-            <input type="text" className="vlocal-input w-full mt-3" placeholder="Specify other scope..."
+            <input type="text" className="CODEVATE-input w-full mt-3" placeholder="Specify other scope..."
               value={otherScope} onChange={e => setOtherScope(e.target.value)} />
           )}
         </div>
@@ -178,12 +178,12 @@ export function ProposalBuilder() {
               <div key={p.id} className="flex gap-3 items-center bg-[var(--bg-elevated)] p-3 rounded-[var(--radius-sm)] border border-[var(--border-default)]">
                 <span className="text-[11px] text-[var(--text-muted)] w-5 shrink-0">{i + 1}</span>
                 <input type="text" value={p.name} onChange={e => updatePhase(p.id, 'name', e.target.value)}
-                  className="vlocal-input flex-1" placeholder="Phase name" />
+                  className="CODEVATE-input flex-1" placeholder="Phase name" />
                 <input type="text" value={p.description} onChange={e => updatePhase(p.id, 'description', e.target.value)}
-                  className="vlocal-input flex-1" placeholder="Description" />
+                  className="CODEVATE-input flex-1" placeholder="Description" />
                 <div className="flex items-center gap-1">
                   <input type="number" value={p.durationDays} onChange={e => updatePhase(p.id, 'durationDays', Number(e.target.value))}
-                    className="vlocal-input w-16 text-center" placeholder="Days" />
+                    className="CODEVATE-input w-16 text-center" placeholder="Days" />
                   <span className="text-[11px] text-[var(--text-muted)]">d</span>
                 </div>
                 <button type="button" onClick={() => removePhase(p.id)}
@@ -201,7 +201,7 @@ export function ProposalBuilder() {
           <div className="grid grid-cols-2 gap-6">
             <div>
               <label className="caption block mb-2">Project Start Date</label>
-              <input type="date" className="vlocal-input w-full" value={startDate}
+              <input type="date" className="CODEVATE-input w-full" value={startDate}
                 onChange={e => setStartDate(e.target.value)} />
             </div>
             <div className="flex flex-col justify-center bg-[var(--info-dim)] border border-[var(--info)] rounded-[var(--radius-sm)] p-4">
@@ -215,13 +215,13 @@ export function ProposalBuilder() {
         <div className="glass-card p-6">
           <h2 className="section-heading mb-4">4. Deliverables</h2>
           <div className="flex gap-2 mb-3">
-            <input type="text" className="vlocal-input flex-1" placeholder="Type and press Enter to add..."
+            <input type="text" className="CODEVATE-input flex-1" placeholder="Type and press Enter to add..."
               value={deliverableInput}
               onChange={e => setDeliverableInput(e.target.value)}
               onKeyDown={e => { if (e.key === 'Enter') { e.preventDefault(); addDeliverable(deliverableInput); } }}
             />
             <button type="button" onClick={() => addDeliverable(deliverableInput)}
-              className="vlocal-btn border border-[var(--border-default)] hover:bg-[var(--bg-hover)] px-4">Add</button>
+              className="CODEVATE-btn border border-[var(--border-default)] hover:bg-[var(--bg-hover)] px-4">Add</button>
           </div>
           <div className="flex flex-wrap gap-2 mb-3">
             {deliverables.map(d => (
@@ -257,13 +257,13 @@ export function ProposalBuilder() {
               <div key={m.id} className="flex gap-3 items-center bg-[var(--bg-elevated)] p-3 rounded-[var(--radius-sm)] border border-[var(--border-default)]">
                 <span className="text-[11px] text-[var(--text-muted)] w-5 shrink-0">M{i+1}</span>
                 <input type="text" value={m.name} onChange={e => updateMilestone(m.id, 'name', e.target.value)}
-                  className="vlocal-input flex-1" placeholder="Milestone name" />
+                  className="CODEVATE-input flex-1" placeholder="Milestone name" />
                 <input type="date" value={m.dueDate} onChange={e => updateMilestone(m.id, 'dueDate', e.target.value)}
-                  className="vlocal-input w-36" />
+                  className="CODEVATE-input w-36" />
                 <div className="relative w-32">
                   <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--text-secondary)] text-[13px]">₹</span>
                   <input type="number" value={m.amount} onChange={e => updateMilestone(m.id, 'amount', Number(e.target.value))}
-                    className="vlocal-input w-full pl-7" />
+                    className="CODEVATE-input w-full pl-7" />
                 </div>
                 <button type="button" onClick={() => removeMilestone(m.id)}
                   className="p-1.5 text-[var(--text-secondary)] hover:text-[var(--danger)] transition-colors">
@@ -302,17 +302,17 @@ export function ProposalBuilder() {
           <div className="flex flex-col gap-4">
             <div>
               <label className="caption block mb-1">Assumptions</label>
-              <textarea className="vlocal-input py-2 min-h-[60px] resize-none w-full" value={assumptions}
+              <textarea className="CODEVATE-input py-2 min-h-[60px] resize-none w-full" value={assumptions}
                 onChange={e => setAssumptions(e.target.value)} />
             </div>
             <div>
               <label className="caption block mb-1">Exclusions</label>
-              <textarea className="vlocal-input py-2 min-h-[60px] resize-none w-full" value={exclusions}
+              <textarea className="CODEVATE-input py-2 min-h-[60px] resize-none w-full" value={exclusions}
                 onChange={e => setExclusions(e.target.value)} />
             </div>
             <div>
               <label className="caption block mb-1">Support Duration</label>
-              <input type="text" className="vlocal-input w-full" value={supportDuration}
+              <input type="text" className="CODEVATE-input w-full" value={supportDuration}
                 onChange={e => setSupportDuration(e.target.value)} />
             </div>
           </div>

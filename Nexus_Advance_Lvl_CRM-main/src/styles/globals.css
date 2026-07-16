@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 @import 'tailwindcss' source(none);
 @import './theme.css';
 @import 'tw-animate-css';
@@ -190,7 +190,7 @@
 .dark-card .text-primary { color: #FFFFFF; }
 
 /* Project Specific Button & Input Utilities */
-.vlocal-btn {
+.CODEVATE-btn {
   height: 44px;
   padding: 0 24px;
   font-family: var(--font-body);
@@ -203,13 +203,13 @@
   transition: all var(--transition-base);
   white-space: nowrap;
 }
-.vlocal-btn-sm {
+.CODEVATE-btn-sm {
   height: 36px;
   padding: 0 16px;
   font-size: var(--text-sm);
 }
 
-.vlocal-input {
+.CODEVATE-input {
   height: 48px;
   background: var(--bg-surface);
   border: 1px solid var(--border-default);
@@ -219,7 +219,7 @@
   font-size: var(--text-base);
   transition: all var(--transition-base);
 }
-.vlocal-input:focus {
+.CODEVATE-input:focus {
   outline: none;
   border-color: var(--accent);
   box-shadow: 0 0 0 3px var(--accent-glow);

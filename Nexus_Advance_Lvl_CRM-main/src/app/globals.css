@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 @import 'tailwindcss' source(none);
 @import './theme.css';
 @import 'tw-animate-css';
@@ -6,7 +6,7 @@
 @source '../**/*.{js,ts,jsx,tsx}';
 
 /* 
-  VlocalOS — Master Theme
+  CODEVATEOS — Master Theme
   Premium warm glassmorphism with micro-interactions
 */
 
@@ -312,7 +312,7 @@
 /* ============================================
    BUTTONS — Premium interactive states
    ============================================ */
-.vlocal-btn {
+.CODEVATE-btn {
   height: 44px;
   padding: 0 24px;
   font-family: var(--font-body);
@@ -328,7 +328,7 @@
   position: relative;
   overflow: hidden;
 }
-.vlocal-btn::after {
+.CODEVATE-btn::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -336,10 +336,10 @@
   background: linear-gradient(180deg, rgba(255,255,255,0.15), transparent);
   pointer-events: none;
 }
-.vlocal-btn:active {
+.CODEVATE-btn:active {
   transform: scale(0.97);
 }
-.vlocal-btn-sm {
+.CODEVATE-btn-sm {
   height: 36px;
   padding: 0 16px;
   font-size: var(--text-sm);
@@ -348,7 +348,7 @@
 /* ============================================
    INPUTS — Clean & Accessible
    ============================================ */
-.vlocal-input {
+.CODEVATE-input {
   height: 48px;
   background: var(--bg-surface);
   border: 1px solid var(--border-default);
@@ -358,12 +358,12 @@
   font-size: var(--text-base);
   transition: all var(--transition-base);
 }
-.vlocal-input:focus {
+.CODEVATE-input:focus {
   outline: none;
   border-color: var(--accent);
   box-shadow: 0 0 0 4px var(--accent-glow), var(--shadow-sm);
 }
-.vlocal-input::placeholder {
+.CODEVATE-input::placeholder {
   color: var(--text-muted);
 }
 

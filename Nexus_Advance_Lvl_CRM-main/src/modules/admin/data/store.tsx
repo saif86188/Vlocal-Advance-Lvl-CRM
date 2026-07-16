@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { createContext, useContext, useReducer, useEffect, ReactNode } from 'react';
 import {
@@ -8,10 +8,10 @@ import {
 import { Requirement, Proposal, Project, Payment, Discussion, EscalationTicket } from './models';
 
 export const mockTeamMembers = [
-  { id: 't-1', name: 'Arjun Mehta', role: 'Lead', email: 'arjun@vlocal.com', activeProjects: 3, avatar: 'AM', color: 'var(--accent)' },
-  { id: 't-2', name: 'Priya Shah', role: 'Designer', email: 'priya@vlocal.com', activeProjects: 2, avatar: 'PS', color: 'var(--info)' },
-  { id: 't-3', name: 'Rahul Verma', role: 'Developer', email: 'rahul@vlocal.com', activeProjects: 4, avatar: 'RV', color: 'var(--success)' },
-  { id: 't-4', name: 'Kavya Nair', role: 'QA', email: 'kavya@vlocal.com', activeProjects: 1, avatar: 'KN', color: 'var(--warning)' },
+  { id: 't-1', name: 'Arjun Mehta', role: 'Lead', email: 'arjun@CODEVATE.com', activeProjects: 3, avatar: 'AM', color: 'var(--accent)' },
+  { id: 't-2', name: 'Priya Shah', role: 'Designer', email: 'priya@CODEVATE.com', activeProjects: 2, avatar: 'PS', color: 'var(--info)' },
+  { id: 't-3', name: 'Rahul Verma', role: 'Developer', email: 'rahul@CODEVATE.com', activeProjects: 4, avatar: 'RV', color: 'var(--success)' },
+  { id: 't-4', name: 'Kavya Nair', role: 'QA', email: 'kavya@CODEVATE.com', activeProjects: 1, avatar: 'KN', color: 'var(--warning)' },
 ];
 
 export type TeamMember = typeof mockTeamMembers[0];
@@ -79,9 +79,9 @@ type Action =
   | { type: 'MARK_ALL_READ' }
   | { type: 'CLEAR_NOTIFICATIONS' };
 
-const ADMIN_STORAGE_KEY = 'vlocal_admin_state';
-const CLIENT_REQ_KEY = 'vlocal_client_requirements';
-const ADMIN_PROPOSALS_KEY = 'vlocal_admin_proposals';
+const ADMIN_STORAGE_KEY = 'CODEVATE_admin_state';
+const CLIENT_REQ_KEY = 'CODEVATE_client_requirements';
+const ADMIN_PROPOSALS_KEY = 'CODEVATE_admin_proposals';
 
 function getInitialState(): AdminState {
   // Load any requirements submitted by client
@@ -121,7 +121,7 @@ function getInitialState(): AdminState {
     ],
     teamMembers: mockTeamMembers,
     settings: {
-      workspaceName: 'Vlocal Core Enterprise',
+      workspaceName: 'CODEVATE Core Enterprise',
       maintenanceMode: false,
       twoFactorAuth: true,
       auditLogging: true,
@@ -131,12 +131,12 @@ function getInitialState(): AdminState {
     },
     adminProfile: {
       name: 'saif',
-      email: 'saif@vlocal.com',
+      email: 'saif@CODEVATE.com',
       role: 'Global Administrator',
       avatar: 'S',
       phone: '+91 98765 43210',
       location: 'Mumbai, India',
-      bio: 'Leading the digital transformation and node orchestration for the Vlocal Core ecosystem.',
+      bio: 'Leading the digital transformation and node orchestration for the CODEVATE Core ecosystem.',
       joinedAt: '2025-01-12T08:00:00Z'
     },
     notifications: [

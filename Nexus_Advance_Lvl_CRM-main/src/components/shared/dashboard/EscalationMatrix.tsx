@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -26,7 +26,7 @@ const escalationPath: Contact[] = [
     level: "Level 1: Incident Coordinator",
     name: "David Chen",
     role: "Campaign Support Lead",
-    email: "david.chen@vlocal.com",
+    email: "david.chen@CODEVATE.com",
     phone: "+1 (555) 234-5678",
     avatar: "DC",
     sla: "2 Hours SLA",
@@ -38,7 +38,7 @@ const escalationPath: Contact[] = [
     level: "Level 2: Operations Lead",
     name: "Priya Shah",
     role: "Senior Operations Director",
-    email: "priya@vlocal.com",
+    email: "priya@CODEVATE.com",
     phone: "+1 (555) 345-6789",
     avatar: "PS",
     sla: "4 Hours SLA",
@@ -50,7 +50,7 @@ const escalationPath: Contact[] = [
     level: "Level 3: Executive Sponsor",
     name: "saif",
     role: "VP of Client Operations",
-    email: "saif@vlocal.com",
+    email: "saif@CODEVATE.com",
     phone: "+1 (555) 456-7890",
     avatar: "S",
     sla: "8 Hours SLA",
@@ -259,7 +259,7 @@ export function EscalationMatrix() {
                   <select 
                     value={issueForm.level}
                     onChange={(e) => setIssueForm({ ...issueForm, level: e.target.value })}
-                    className="vlocal-input w-full bg-white/80 border-neutral-100 rounded-xl"
+                    className="CODEVATE-input w-full bg-white/80 border-neutral-100 rounded-xl"
                   >
                     {escalationPath.map((item, idx) => (
                       <option key={idx} value={item.level}>{item.level}</option>
@@ -274,7 +274,7 @@ export function EscalationMatrix() {
                     placeholder="Short description of emergency..."
                     value={issueForm.subject}
                     onChange={(e) => setIssueForm({ ...issueForm, subject: e.target.value })}
-                    className="vlocal-input w-full bg-white/80 border-neutral-100 rounded-xl"
+                    className="CODEVATE-input w-full bg-white/80 border-neutral-100 rounded-xl"
                     required
                   />
                 </div>
@@ -285,7 +285,7 @@ export function EscalationMatrix() {
                     placeholder="Provide details on the timeline, budget impact, or technical roadblocks..."
                     value={issueForm.description}
                     onChange={(e) => setIssueForm({ ...issueForm, description: e.target.value })}
-                    className="vlocal-input w-full bg-white/80 border-neutral-100 rounded-xl min-h-[90px] py-3.5"
+                    className="CODEVATE-input w-full bg-white/80 border-neutral-100 rounded-xl min-h-[90px] py-3.5"
                     required
                   />
                 </div>
@@ -293,7 +293,7 @@ export function EscalationMatrix() {
                 <button 
                   type="submit" 
                   disabled={isSubmitting}
-                  className="vlocal-btn w-full bg-neutral-900 text-white font-bold tracking-widest uppercase text-xs flex items-center justify-center gap-2"
+                  className="CODEVATE-btn w-full bg-neutral-900 text-white font-bold tracking-widest uppercase text-xs flex items-center justify-center gap-2"
                 >
                   {isSubmitting ? 'Lodging Request...' : 'Trigger Escalation'}
                 </button>

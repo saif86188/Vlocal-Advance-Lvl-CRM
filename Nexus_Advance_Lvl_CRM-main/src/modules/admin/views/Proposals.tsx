@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { useAdminStore } from '@/modules/admin/data/store';
 import Link from 'next/link';
 import { Edit2, Download, MessageSquare, CheckSquare, Upload, X, Send } from 'lucide-react';
@@ -74,7 +74,7 @@ export function Proposals() {
           <h1>All Proposals</h1>
           <p className="text-[var(--text-secondary)] mt-1">{activeProposals.length} active proposals</p>
         </div>
-        <Link href="/builder" className="vlocal-btn bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white gap-2">
+        <Link href="/builder" className="CODEVATE-btn bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white gap-2">
           + New Proposal
         </Link>
       </div>
@@ -216,14 +216,14 @@ export function Proposals() {
             </div>
             <div className="p-4 border-t border-[var(--border-subtle)] flex gap-2">
               <input
-                className="vlocal-input flex-1 text-[13px]"
+                className="CODEVATE-input flex-1 text-[13px]"
                 placeholder="Type a reply..."
                 value={chatMsg}
                 onChange={e => setChatMsg(e.target.value)}
                 onKeyDown={e => { if (e.key === 'Enter') handleSendChat(discussion.id); }}
               />
               <button onClick={() => handleSendChat(discussion.id)}
-                className="vlocal-btn bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white px-3">
+                className="CODEVATE-btn bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white px-3">
                 <Send size={16} />
               </button>
             </div>
@@ -243,14 +243,14 @@ export function Proposals() {
               <div className="p-5 flex flex-col gap-4">
                 <div>
                   <label className="caption block mb-2">File Name / Label</label>
-                  <input className="vlocal-input w-full" placeholder="e.g. logo-final-v3.fig" value={uploadFile} onChange={e => setUploadFile(e.target.value)} />
+                  <input className="CODEVATE-input w-full" placeholder="e.g. logo-final-v3.fig" value={uploadFile} onChange={e => setUploadFile(e.target.value)} />
                 </div>
                 <div className="border border-dashed border-[var(--border-strong)] rounded-[var(--radius-sm)] p-8 flex flex-col items-center justify-center text-[var(--text-secondary)] hover:bg-[var(--bg-hover)] cursor-pointer transition-colors">
                   <Upload size={24} className="mb-2 text-[var(--text-muted)]" />
                   <span className="text-[13px]">Drop file here or click to browse</span>
                 </div>
                 <button onClick={() => handleUpload(uploadPanel.id)}
-                  className="vlocal-btn bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white w-full">
+                  className="CODEVATE-btn bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white w-full">
                   Upload Deliverable
                 </button>
               </div>

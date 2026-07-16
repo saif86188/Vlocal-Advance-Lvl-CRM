@@ -1,4 +1,4 @@
-import {
+﻿import {
   User,
   Requirement,
   Proposal,
@@ -12,25 +12,25 @@ export const mockUsers: User[] = [
   {
     id: 'u-1',
     name: 'saif',
-    email: 'saif@vlocal.com',
+    email: 'saif@CODEVATE.com',
     role: 'client',
-    companyName: 'Vlocal Corp',
+    companyName: 'CODEVATE Corp',
     createdAt: '2024-01-15T10:00:00Z',
     avatarUrl: 'https://avatar.iran.liara.run/public/boy?username=saif'
   },
   {
     id: 'u-2',
     name: 'saif',
-    email: 'saif@vlocal.com',
+    email: 'saif@CODEVATE.com',
     role: 'client',
-    companyName: 'Vlocal Technologies',
+    companyName: 'CODEVATE Technologies',
     createdAt: '2024-02-20T11:00:00Z',
     avatarUrl: 'https://avatar.iran.liara.run/public/boy?username=saif'
   },
   {
     id: 'a-1',
     name: 'Admin Team',
-    email: 'hello@vlocal.com',
+    email: 'hello@CODEVATE.com',
     role: 'admin',
     createdAt: '2023-01-01T00:00:00Z'
   }

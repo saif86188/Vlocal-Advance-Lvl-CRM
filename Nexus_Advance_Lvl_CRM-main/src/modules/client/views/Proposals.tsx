@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { useClientStore } from '@/modules/client/data/store';
 import { Download, MessageSquare, X, Send, CheckCircle } from 'lucide-react';
 import { toast } from 'sonner';
@@ -38,7 +38,7 @@ export function Proposals() {
     <div className="flex flex-col items-center justify-center h-full py-24 text-center">
       <div className="text-[32px] mb-2">📄</div>
       <h2 className="text-[18px] font-semibold">No proposals yet</h2>
-      <p className="text-[var(--text-secondary)] text-[13px] mt-1">A proposal will appear here once the VLOCAL team sends one.</p>
+      <p className="text-[var(--text-secondary)] text-[13px] mt-1">A proposal will appear here once the CODEVATE team sends one.</p>
     </div>
   );
 
@@ -68,7 +68,7 @@ export function Proposals() {
       },
     });
     setChatMsg('');
-    toast.success('Message sent to VLOCAL team!');
+    toast.success('Message sent to CODEVATE team!');
   };
 
   const status = currentProposal.status as string;
@@ -81,7 +81,7 @@ export function Proposals() {
           <h1>Proposals</h1>
           <p className="text-[var(--text-secondary)] mt-1">{activeProposals.length} active proposal{activeProposals.length !== 1 ? 's' : ''}</p>
         </div>
-        <select value={selectedVersion} onChange={e => setSelectedVersion(e.target.value)} className="vlocal-input w-full sm:w-36">
+        <select value={selectedVersion} onChange={e => setSelectedVersion(e.target.value)} className="CODEVATE-input w-full sm:w-36">
           {activeProposals.map(p => (
             <option key={p.id} value={`V${p.version}`}>Version {p.version} (Current)</option>
           ))}
@@ -102,7 +102,7 @@ export function Proposals() {
                 {status.replace(/_/g, ' ')}
               </span>
             </div>
-            <p className="text-[11.5px] text-[var(--text-secondary)]">Sent by VLOCAL Team • {new Date(currentProposal.sentAt).toLocaleDateString('en-GB')}</p>
+            <p className="text-[11.5px] text-[var(--text-secondary)]">Sent by CODEVATE Team • {new Date(currentProposal.sentAt).toLocaleDateString('en-GB')}</p>
           </div>
           <div className="text-left sm:text-right">
             <div className="caption text-[var(--text-muted)] mb-1">OFFERED PRICE</div>
@@ -189,25 +189,25 @@ export function Proposals() {
           <div className="flex gap-2 flex-wrap">
             {status === 'awaiting_approval' && (
               <>
-                <button onClick={() => setConfirmApprove(true)} className="vlocal-btn bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white">Approve Proposal</button>
-                <button onClick={() => toast.info('Change request sent to VLOCAL team!')} className="vlocal-btn border border-[var(--border-default)] hover:bg-[var(--bg-hover)]">Request Changes</button>
+                <button onClick={() => setConfirmApprove(true)} className="CODEVATE-btn bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white">Approve Proposal</button>
+                <button onClick={() => toast.info('Change request sent to CODEVATE team!')} className="CODEVATE-btn border border-[var(--border-default)] hover:bg-[var(--bg-hover)]">Request Changes</button>
               </>
             )}
             {status === 'approved' && pendingPayment && (
-              <button onClick={() => setPayModalOpen(true)} className="vlocal-btn bg-[var(--success)] hover:bg-[#2EAA68] text-white">Pay Now</button>
+              <button onClick={() => setPayModalOpen(true)} className="CODEVATE-btn bg-[var(--success)] hover:bg-[#2EAA68] text-white">Pay Now</button>
             )}
             {status === 'in_progress' && (
-              <button className="vlocal-btn bg-[var(--info-dim)] text-[var(--info)] border border-[var(--info-dim)]">View Progress</button>
+              <button className="CODEVATE-btn bg-[var(--info-dim)] text-[var(--info)] border border-[var(--info-dim)]">View Progress</button>
             )}
           </div>
           <div className="flex gap-2">
             {(status === 'awaiting_approval' || status === 'under_discussion' || status === 'approved') && (
-              <button onClick={() => setDiscussionOpen(true)} className="vlocal-btn border border-[var(--border-default)] hover:bg-[var(--bg-hover)] flex items-center gap-2">
+              <button onClick={() => setDiscussionOpen(true)} className="CODEVATE-btn border border-[var(--border-default)] hover:bg-[var(--bg-hover)] flex items-center gap-2">
                 <MessageSquare size={15} /> Discuss
                 {discussion && discussion.unreads > 0 && <span className="w-2 h-2 bg-[var(--accent)] rounded-full" />}
               </button>
             )}
-            <button className="vlocal-btn border border-[var(--border-default)] hover:bg-[var(--bg-hover)] flex items-center gap-2">
+            <button className="CODEVATE-btn border border-[var(--border-default)] hover:bg-[var(--bg-hover)] flex items-center gap-2">
               <Download size={15} /> Download PDF
             </button>
           </div>
@@ -244,8 +244,8 @@ export function Proposals() {
                 </div>
               </div>
               <div className="flex gap-3">
-                <button onClick={() => setConfirmApprove(false)} className="vlocal-btn flex-1 border border-[var(--border-default)] hover:bg-[var(--bg-hover)]">Cancel</button>
-                <button onClick={handleApprove} className="vlocal-btn flex-1 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white">Approve & Proceed</button>
+                <button onClick={() => setConfirmApprove(false)} className="CODEVATE-btn flex-1 border border-[var(--border-default)] hover:bg-[var(--bg-hover)]">Cancel</button>
+                <button onClick={handleApprove} className="CODEVATE-btn flex-1 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white">Approve & Proceed</button>
               </div>
             </div>
           </div>
@@ -260,7 +260,7 @@ export function Proposals() {
             <div className="flex items-center justify-between p-4 border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)]">
               <div>
                 <h3 className="font-semibold text-[15px]">Discussion Room</h3>
-                <p className="text-[11.5px] text-[var(--text-secondary)]">Brand Identity • V{currentProposal.version} • Direct with VLOCAL Team</p>
+                <p className="text-[11.5px] text-[var(--text-secondary)]">Brand Identity • V{currentProposal.version} • Direct with CODEVATE Team</p>
               </div>
               <button onClick={() => setDiscussionOpen(false)} className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] p-1"><X size={18} /></button>
             </div>
@@ -272,7 +272,7 @@ export function Proposals() {
                 <div key={msg.id} className={`flex ${msg.senderRole === 'client' ? 'justify-end' : 'justify-start'}`}>
                   <div className={`max-w-[80%] rounded-[10px] p-3 text-[13px] leading-relaxed ${msg.senderRole === 'client' ? 'bg-[var(--accent)] text-white rounded-tr-none' : 'bg-[var(--bg-elevated)] border border-[var(--border-default)] text-[var(--text-primary)] rounded-tl-none'}`}>
                     <div className="text-[11px] opacity-70 mb-1">
-                      {msg.senderRole === 'client' ? 'You' : 'VLOCAL Team'} • {new Date(msg.timestamp).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}
+                      {msg.senderRole === 'client' ? 'You' : 'CODEVATE Team'} • {new Date(msg.timestamp).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}
                     </div>
                     {msg.content}
                   </div>
@@ -280,8 +280,8 @@ export function Proposals() {
               ))}
             </div>
             <div className="p-4 border-t border-[var(--border-subtle)] flex gap-2">
-              <input className="vlocal-input flex-1 text-[13px]" placeholder="Type a message…" value={chatMsg} onChange={e => setChatMsg(e.target.value)} onKeyDown={e => { if (e.key === 'Enter') handleSendMessage(); }} />
-              <button onClick={handleSendMessage} className="vlocal-btn bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white px-4"><Send size={16} /></button>
+              <input className="CODEVATE-input flex-1 text-[13px]" placeholder="Type a message…" value={chatMsg} onChange={e => setChatMsg(e.target.value)} onKeyDown={e => { if (e.key === 'Enter') handleSendMessage(); }} />
+              <button onClick={handleSendMessage} className="CODEVATE-btn bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white px-4"><Send size={16} /></button>
             </div>
           </div>
         </>
@@ -319,23 +319,23 @@ export function Proposals() {
                 {payMethod === 'UPI' && (
                   <div className="border border-[var(--border-default)] rounded-[var(--radius-sm)] p-5 flex flex-col items-center gap-3">
                     <div className="w-28 h-28 bg-white rounded-md flex items-center justify-center">
-                      <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=vlocal@upi" alt="UPI QR" className="opacity-90" />
+                      <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=CODEVATE@upi" alt="UPI QR" className="opacity-90" />
                     </div>
-                    <input className="vlocal-input w-full text-center text-[13px]" placeholder="Enter UPI ID (e.g. name@okhdfc)" />
+                    <input className="CODEVATE-input w-full text-center text-[13px]" placeholder="Enter UPI ID (e.g. name@okhdfc)" />
                   </div>
                 )}
                 {payMethod === 'Card' && (
                   <div className="flex flex-col gap-3">
-                    <input className="vlocal-input w-full" placeholder="Card Number" maxLength={16} />
+                    <input className="CODEVATE-input w-full" placeholder="Card Number" maxLength={16} />
                     <div className="flex gap-3">
-                      <input className="vlocal-input flex-1" placeholder="MM/YY" />
-                      <input className="vlocal-input flex-1" placeholder="CVV" maxLength={3} />
+                      <input className="CODEVATE-input flex-1" placeholder="MM/YY" />
+                      <input className="CODEVATE-input flex-1" placeholder="CVV" maxLength={3} />
                     </div>
-                    <input className="vlocal-input w-full" placeholder="Cardholder Name" />
+                    <input className="CODEVATE-input w-full" placeholder="Cardholder Name" />
                   </div>
                 )}
                 {payMethod === 'Net Banking' && (
-                  <select className="vlocal-input w-full">
+                  <select className="CODEVATE-input w-full">
                     <option>Select your bank…</option>
                     {['HDFC Bank', 'SBI', 'ICICI Bank', 'Axis Bank', 'Kotak Bank', 'Yes Bank'].map(b => (
                       <option key={b}>{b}</option>
@@ -355,7 +355,7 @@ export function Proposals() {
                     ))}
                   </div>
                 )}
-                <button onClick={handlePay} className="vlocal-btn bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white w-full text-[15px] font-semibold mt-2">
+                <button onClick={handlePay} className="CODEVATE-btn bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white w-full text-[15px] font-semibold mt-2">
                   Pay {fmt(pendingPayment.total)}
                 </button>
               </div>

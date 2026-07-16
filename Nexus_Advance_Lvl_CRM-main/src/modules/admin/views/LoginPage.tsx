@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Mail, Lock, Eye, EyeOff } from "lucide-react";
 
@@ -38,7 +38,7 @@ export function LoginPage() {
                   id="email"
                   type="email"
                   placeholder="admin@siaf.com"
-                  className="vlocal-input w-full !pl-11"
+                  className="CODEVATE-input w-full !pl-11"
                 />
               </div>
             </div>
@@ -55,7 +55,7 @@ export function LoginPage() {
                   id="password"
                   type={showPassword ? "text" : "password"}
                   placeholder="••••••••"
-                  className="vlocal-input w-full !pl-11 !pr-12"
+                  className="CODEVATE-input w-full !pl-11 !pr-12"
                 />
                 <button
                   type="button"
@@ -79,7 +79,7 @@ export function LoginPage() {
 
             <button
               type="submit"
-              className="vlocal-btn w-full bg-[var(--accent)] text-white hover:bg-[var(--accent-hover)] shadow-lg shadow-blue-900/10 font-bold text-base h-12"
+              className="CODEVATE-btn w-full bg-[var(--accent)] text-white hover:bg-[var(--accent-hover)] shadow-lg shadow-blue-900/10 font-bold text-base h-12"
             >
               Sign In to Dashboard
             </button>

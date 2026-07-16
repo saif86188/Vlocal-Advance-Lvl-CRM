@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { FormEvent, useState } from 'react';
 import Link from 'next/link';
@@ -10,7 +10,7 @@ import { motion } from 'motion/react';
 export default function RegisterPage() {
   const router = useRouter();
   const [name, setName] = useState('saif');
-  const [email, setEmail] = useState('saif@vlocal.com');
+  const [email, setEmail] = useState('saif@CODEVATE.com');
   const [password, setPassword] = useState('saifpassword123');
   const [role, setRole] = useState<'admin' | 'client'>('client');
   const [company, setCompany] = useState('saif Corp');
@@ -137,10 +137,10 @@ export default function RegisterPage() {
       >
         <Link href="/" className="flex items-center gap-3 mb-6 group transition duration-300 hover:scale-[1.02]">
           <div className="relative w-10 h-10 rounded-xl overflow-hidden shadow-md flex items-center justify-center bg-white border border-neutral-100">
-            <Image src="/icon.png" alt="Vlocal Logo" fill className="object-cover" />
+            <Image src="/icon.png" alt="CODEVATE Logo" fill className="object-cover" />
           </div>
           <span className="font-display text-lg font-bold text-[var(--text-primary)] tracking-tight">
-            Vlocal<span className="text-[var(--accent)] italic">Portal</span>
+            CODEVATE<span className="text-[var(--accent)] italic">Portal</span>
           </span>
         </Link>
       </motion.div>
@@ -177,7 +177,7 @@ export default function RegisterPage() {
                 <input
                   id="name"
                   type="text"
-                  className="vlocal-input input-glow w-full !pl-11"
+                  className="CODEVATE-input input-glow w-full !pl-11"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required
@@ -198,7 +198,7 @@ export default function RegisterPage() {
                 <input
                   id="email"
                   type="email"
-                  className="vlocal-input input-glow w-full !pl-11"
+                  className="CODEVATE-input input-glow w-full !pl-11"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -221,7 +221,7 @@ export default function RegisterPage() {
                 <input
                   id="password"
                   type={showPassword ? 'text' : 'password'}
-                  className="vlocal-input input-glow w-full !pl-11 !pr-12"
+                  className="CODEVATE-input input-glow w-full !pl-11 !pr-12"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   minLength={8}
@@ -248,7 +248,7 @@ export default function RegisterPage() {
               </label>
               <select
                 id="role"
-                className="vlocal-input input-glow w-full cursor-pointer font-bold"
+                className="CODEVATE-input input-glow w-full cursor-pointer font-bold"
                 value={role}
                 onChange={(e) => setRole(e.target.value as 'admin' | 'client')}
               >
@@ -271,7 +271,7 @@ export default function RegisterPage() {
                 <input
                   id="company"
                   type="text"
-                  className="vlocal-input input-glow w-full !pl-11"
+                  className="CODEVATE-input input-glow w-full !pl-11"
                   value={company}
                   onChange={(e) => setCompany(e.target.value)}
                 />
@@ -291,7 +291,7 @@ export default function RegisterPage() {
                 <input
                   id="phone"
                   type="tel"
-                  className="vlocal-input input-glow w-full !pl-11"
+                  className="CODEVATE-input input-glow w-full !pl-11"
                   placeholder="+1 (555) 000-0000"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
@@ -313,7 +313,7 @@ export default function RegisterPage() {
             <button
               type="submit"
               disabled={loading}
-              className="vlocal-btn gold-shimmer w-full bg-[var(--accent)] text-neutral-900 font-bold flex items-center justify-center gap-2 cursor-pointer shadow-lg"
+              className="CODEVATE-btn gold-shimmer w-full bg-[var(--accent)] text-neutral-900 font-bold flex items-center justify-center gap-2 cursor-pointer shadow-lg"
             >
               {loading ? (
                 <>

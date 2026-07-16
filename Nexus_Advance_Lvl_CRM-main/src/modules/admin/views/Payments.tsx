@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { useAdminStore } from '@/modules/admin/data/store';
 import { Download, Bell, X, Plus, Trash2 } from 'lucide-react';
 import { toast } from 'sonner';
@@ -40,11 +40,11 @@ export function Payments() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <h1>Payments & Invoices</h1>
         <div className="flex flex-wrap gap-2">
-          <button className="vlocal-btn border border-[var(--border-default)] hover:bg-[var(--bg-hover)] flex items-center gap-2">
+          <button className="CODEVATE-btn border border-[var(--border-default)] hover:bg-[var(--bg-hover)] flex items-center gap-2">
             <Download size={15} /> Export CSV
           </button>
           <button onClick={() => setShowInvoicePanel(true)}
-            className="vlocal-btn bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white">
+            className="CODEVATE-btn bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white">
             Generate Invoice
           </button>
         </div>
@@ -106,7 +106,7 @@ export function Payments() {
                           <Bell size={15} />
                         </button>
                         <button onClick={() => handleMarkPaid(inv.id, inv.invoiceNumber)}
-                          className="vlocal-btn-sm bg-[var(--success-dim)] text-[var(--success)] hover:bg-[var(--success)] hover:text-white border border-[var(--success-dim)] transition-all text-[11.5px]">
+                          className="CODEVATE-btn-sm bg-[var(--success-dim)] text-[var(--success)] hover:bg-[var(--success)] hover:text-white border border-[var(--success-dim)] transition-all text-[11.5px]">
                           Mark Paid
                         </button>
                       </>
@@ -138,11 +138,11 @@ export function Payments() {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="caption block mb-2">Invoice Number</label>
-                  <input className="vlocal-input w-full" defaultValue="INV-2025-004" readOnly />
+                  <input className="CODEVATE-input w-full" defaultValue="INV-2025-004" readOnly />
                 </div>
                 <div>
                   <label className="caption block mb-2">Client</label>
-                  <input className="vlocal-input w-full" defaultValue="Apex Corp" readOnly />
+                  <input className="CODEVATE-input w-full" defaultValue="Apex Corp" readOnly />
                 </div>
               </div>
               <div>
@@ -156,10 +156,10 @@ export function Payments() {
                 <div className="flex flex-col gap-2">
                   {invoiceLines.map((line, i) => (
                     <div key={line.id} className="flex gap-2 items-center">
-                      <input className="vlocal-input flex-1" placeholder="Description" defaultValue={line.desc} />
+                      <input className="CODEVATE-input flex-1" placeholder="Description" defaultValue={line.desc} />
                       <div className="relative w-28">
                         <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--text-secondary)] text-[13px]">₹</span>
-                        <input type="number" className="vlocal-input w-full pl-7" defaultValue={line.amount} />
+                        <input type="number" className="CODEVATE-input w-full pl-7" defaultValue={line.amount} />
                       </div>
                       <button onClick={() => setInvoiceLines(l => l.filter((_, idx) => idx !== i))}
                         className="text-[var(--text-secondary)] hover:text-[var(--danger)]"><Trash2 size={15} /></button>
@@ -170,26 +170,26 @@ export function Payments() {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="caption block mb-2">Tax %</label>
-                  <input type="number" className="vlocal-input w-full" defaultValue="18" />
+                  <input type="number" className="CODEVATE-input w-full" defaultValue="18" />
                 </div>
                 <div>
                   <label className="caption block mb-2">Due Date</label>
-                  <input type="date" className="vlocal-input w-full" />
+                  <input type="date" className="CODEVATE-input w-full" />
                 </div>
               </div>
               <div>
                 <label className="caption block mb-2">Notes</label>
-                <textarea className="vlocal-input w-full py-2 min-h-[60px] resize-none"
+                <textarea className="CODEVATE-input w-full py-2 min-h-[60px] resize-none"
                   placeholder="Any special notes for this invoice..." />
               </div>
             </div>
             <div className="p-5 border-t border-[var(--border-subtle)] flex gap-3">
               <button onClick={() => setShowInvoicePanel(false)}
-                className="vlocal-btn flex-1 border border-[var(--border-default)] hover:bg-[var(--bg-hover)]">
+                className="CODEVATE-btn flex-1 border border-[var(--border-default)] hover:bg-[var(--bg-hover)]">
                 Cancel
               </button>
               <button onClick={handleSendInvoice}
-                className="vlocal-btn flex-1 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white">
+                className="CODEVATE-btn flex-1 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white">
                 Preview & Send
               </button>
             </div>

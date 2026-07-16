@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -63,12 +63,12 @@ export default function ProfilePage() {
            <div className="flex flex-col gap-3 min-w-[200px]">
               <button 
                 onClick={() => isEditing ? handleSave() : setIsEditing(true)}
-                className="vlocal-btn bg-neutral-900 text-white w-full shadow-xl hover:scale-[1.02] flex gap-3 transition-all"
+                className="CODEVATE-btn bg-neutral-900 text-white w-full shadow-xl hover:scale-[1.02] flex gap-3 transition-all"
               >
                  {isEditing ? <CheckCircle2 size={16} /> : <Edit3 size={16} />}
                  <span className="uppercase tracking-widest text-[11px] font-black">{isEditing ? 'Save Profile' : 'Edit Profile'}</span>
               </button>
-              <button className="vlocal-btn bg-white border border-neutral-200 text-neutral-500 hover:text-rose-500 hover:border-rose-100 hover:bg-rose-50 w-full shadow-sm flex gap-3 transition-all">
+              <button className="CODEVATE-btn bg-white border border-neutral-200 text-neutral-500 hover:text-rose-500 hover:border-rose-100 hover:bg-rose-50 w-full shadow-sm flex gap-3 transition-all">
                  <LogOut size={16} />
                  <span className="uppercase tracking-widest text-[11px] font-black">Secure Logout</span>
               </button>
@@ -144,7 +144,7 @@ export default function ProfilePage() {
                                 disabled={!isEditing}
                                 value={state.adminProfile.name}
                                 onChange={(e) => handleUpdate({ name: e.target.value })}
-                                className="vlocal-input w-full bg-neutral-50/50 border-neutral-100 disabled:opacity-70 disabled:bg-transparent rounded-2xl px-6 font-bold"
+                                className="CODEVATE-input w-full bg-neutral-50/50 border-neutral-100 disabled:opacity-70 disabled:bg-transparent rounded-2xl px-6 font-bold"
                               />
                            </div>
                            <div className="space-y-3">
@@ -156,7 +156,7 @@ export default function ProfilePage() {
                                 disabled={!isEditing}
                                 value={state.adminProfile.email}
                                 onChange={(e) => handleUpdate({ email: e.target.value })}
-                                className="vlocal-input w-full bg-neutral-50/50 border-neutral-100 disabled:opacity-70 disabled:bg-transparent rounded-2xl px-6 font-bold"
+                                className="CODEVATE-input w-full bg-neutral-50/50 border-neutral-100 disabled:opacity-70 disabled:bg-transparent rounded-2xl px-6 font-bold"
                               />
                            </div>
                            <div className="space-y-3">
@@ -168,7 +168,7 @@ export default function ProfilePage() {
                                 disabled={!isEditing}
                                 value={state.adminProfile.phone}
                                 onChange={(e) => handleUpdate({ phone: e.target.value })}
-                                className="vlocal-input w-full bg-neutral-50/50 border-neutral-100 disabled:opacity-70 disabled:bg-transparent rounded-2xl px-6 font-bold"
+                                className="CODEVATE-input w-full bg-neutral-50/50 border-neutral-100 disabled:opacity-70 disabled:bg-transparent rounded-2xl px-6 font-bold"
                               />
                            </div>
                            <div className="space-y-3">
@@ -180,7 +180,7 @@ export default function ProfilePage() {
                                 disabled={!isEditing}
                                 value={state.adminProfile.location}
                                 onChange={(e) => handleUpdate({ location: e.target.value })}
-                                className="vlocal-input w-full bg-neutral-50/50 border-neutral-100 disabled:opacity-70 disabled:bg-transparent rounded-2xl px-6 font-bold"
+                                className="CODEVATE-input w-full bg-neutral-50/50 border-neutral-100 disabled:opacity-70 disabled:bg-transparent rounded-2xl px-6 font-bold"
                               />
                            </div>
                         </div>
@@ -194,7 +194,7 @@ export default function ProfilePage() {
                               value={state.adminProfile.bio}
                               onChange={(e) => handleUpdate({ bio: e.target.value })}
                               rows={4}
-                              className="vlocal-input w-full bg-neutral-50/50 border-neutral-100 disabled:opacity-70 disabled:bg-transparent rounded-2xl px-6 py-4 font-bold resize-none"
+                              className="CODEVATE-input w-full bg-neutral-50/50 border-neutral-100 disabled:opacity-70 disabled:bg-transparent rounded-2xl px-6 py-4 font-bold resize-none"
                            />
                         </div>
                      </div>

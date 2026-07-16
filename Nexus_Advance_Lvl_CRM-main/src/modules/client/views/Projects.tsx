@@ -1,4 +1,4 @@
-import { useClientStore } from '@/modules/client/data/store';
+﻿import { useClientStore } from '@/modules/client/data/store';
 import { Download, CheckCircle, Circle } from 'lucide-react';
 
 export function Projects() {
@@ -124,7 +124,7 @@ export function Projects() {
                       <div key={d.id} className="flex items-center justify-between p-3.5 rounded-xl border border-[var(--border-default)] bg-white hover:border-[var(--border-strong)] hover:shadow-sm transition-all group">
                         <div className="overflow-hidden pr-2">
                           <div className="text-sm font-semibold truncate text-gray-800">{d.label}</div>
-                          <div className="text-xs font-medium text-[var(--text-secondary)] mt-0.5">Uploaded by VLOCAL • {new Date(d.uploadedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })}</div>
+                          <div className="text-xs font-medium text-[var(--text-secondary)] mt-0.5">Uploaded by CODEVATE • {new Date(d.uploadedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })}</div>
                         </div>
                         <button className="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors ml-2 shrink-0 p-2 rounded-lg hover:bg-gray-50">
                           <Download size={18} />

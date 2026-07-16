@@ -1,4 +1,4 @@
-import { MapPin, Calendar, Clock, User, Filter, Plus } from "lucide-react";
+﻿import { MapPin, Calendar, Clock, User, Filter, Plus } from "lucide-react";
 
 const activities = [
   {
@@ -67,7 +67,7 @@ export function FieldActivity() {
           <h1 className="text-3xl sm:text-4xl font-display font-medium">Field Activity Tracking</h1>
           <p className="text-[var(--text-secondary)] mt-1">Monitor and manage field operations and activities</p>
         </div>
-        <button className="vlocal-btn bg-[var(--accent)] text-neutral-900 shadow-sm hover:scale-[1.02] border border-neutral-900">
+        <button className="CODEVATE-btn bg-[var(--accent)] text-neutral-900 shadow-sm hover:scale-[1.02] border border-neutral-900">
           <Plus className="w-5 h-5 mr-1" />
           Log Activity
         </button>
@@ -94,7 +94,7 @@ export function FieldActivity() {
             type="date"
             className="px-4 py-2.5 border border-[var(--border-default)] rounded-xl bg-[var(--bg-surface)] focus:ring-2 focus:ring-[var(--accent)] focus:border-[var(--accent)] outline-none transition-all shadow-sm"
           />
-          <button className="vlocal-btn border border-[var(--border-default)] hover:bg-[var(--bg-hover)] bg-white/50 text-[var(--text-primary)]">
+          <button className="CODEVATE-btn border border-[var(--border-default)] hover:bg-[var(--bg-hover)] bg-white/50 text-[var(--text-primary)]">
             <Filter className="w-5 h-5 mr-1" />
             More Filters
           </button>

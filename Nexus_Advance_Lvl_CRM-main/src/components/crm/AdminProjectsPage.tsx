@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { FormEvent, useEffect, useState } from 'react';
 import { toast } from 'sonner';
@@ -218,7 +218,7 @@ export function AdminProjectsPage() {
           <p className="text-sm text-[var(--text-secondary)] font-medium">Drag cards to update deliverable statuses</p>
         </div>
         <button 
-          className="vlocal-btn bg-[var(--accent)] text-neutral-900 font-bold shadow-md hover:scale-[1.02] active:scale-[0.98] transition cursor-pointer" 
+          className="CODEVATE-btn bg-[var(--accent)] text-neutral-900 font-bold shadow-md hover:scale-[1.02] active:scale-[0.98] transition cursor-pointer" 
           onClick={() => setShowCreate((v) => !v)}
         >
           {showCreate ? 'Close Form' : 'Create Project'}
@@ -229,11 +229,11 @@ export function AdminProjectsPage() {
         <form onSubmit={createProject} className="grid grid-cols-1 md:grid-cols-2 gap-4 p-6 rounded-3xl border border-neutral-200 bg-white shadow-sm animate-in fade-in duration-300">
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider mb-2 text-neutral-500">Project Title</label>
-            <input className="vlocal-input w-full" placeholder="e.g. CRM Implementation" value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} required />
+            <input className="CODEVATE-input w-full" placeholder="e.g. CRM Implementation" value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} required />
           </div>
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider mb-2 text-neutral-500">Client / Company</label>
-            <select className="vlocal-input w-full" value={form.clientId} onChange={(e) => setForm({ ...form, clientId: e.target.value })} required>
+            <select className="CODEVATE-input w-full" value={form.clientId} onChange={(e) => setForm({ ...form, clientId: e.target.value })} required>
               <option value="">Select corporate client</option>
               {clients.map((c) => (
                 <option key={c._id} value={c._id}>
@@ -244,17 +244,17 @@ export function AdminProjectsPage() {
           </div>
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider mb-2 text-neutral-500">Start Date</label>
-            <input className="vlocal-input w-full" type="date" value={form.startDate} onChange={(e) => setForm({ ...form, startDate: e.target.value })} required />
+            <input className="CODEVATE-input w-full" type="date" value={form.startDate} onChange={(e) => setForm({ ...form, startDate: e.target.value })} required />
           </div>
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider mb-2 text-neutral-500">Due Date</label>
-            <input className="vlocal-input w-full" type="date" value={form.dueDate} onChange={(e) => setForm({ ...form, dueDate: e.target.value })} required />
+            <input className="CODEVATE-input w-full" type="date" value={form.dueDate} onChange={(e) => setForm({ ...form, dueDate: e.target.value })} required />
           </div>
           <div className="md:col-span-2">
             <label className="block text-xs font-bold uppercase tracking-wider mb-2 text-neutral-500">Project Description</label>
-            <textarea className="vlocal-input w-full h-20 py-2.5 resize-none" placeholder="Outline deliverables..." value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} />
+            <textarea className="CODEVATE-input w-full h-20 py-2.5 resize-none" placeholder="Outline deliverables..." value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} />
           </div>
-          <button className="vlocal-btn bg-neutral-900 text-white md:col-span-2 font-bold cursor-pointer">Start Project</button>
+          <button className="CODEVATE-btn bg-neutral-900 text-white md:col-span-2 font-bold cursor-pointer">Start Project</button>
         </form>
       )}
 

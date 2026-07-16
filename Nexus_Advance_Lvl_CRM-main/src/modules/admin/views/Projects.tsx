@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { useAdminStore } from '@/modules/admin/data/store';
 import { Download, CheckCircle, Circle, Upload, X, Check } from 'lucide-react';
 import { toast } from 'sonner';
@@ -75,7 +75,7 @@ export function Projects() {
                 </div>
                 <div className="flex gap-2">
                   <button onClick={() => setUploadPanel({ projectId: project.id })}
-                    className="vlocal-btn-sm border border-[var(--border-default)] hover:bg-[var(--bg-hover)] flex items-center gap-1.5 shadow-sm bg-white">
+                    className="CODEVATE-btn-sm border border-[var(--border-default)] hover:bg-[var(--bg-hover)] flex items-center gap-1.5 shadow-sm bg-white">
                     <Upload size={14} /> Upload
                   </button>
                 </div>
@@ -203,14 +203,14 @@ export function Projects() {
               <div className="p-6 flex flex-col gap-5">
                 <div>
                   <label className="caption block mb-2 font-semibold">File Name / Label</label>
-                  <input className="vlocal-input w-full shadow-sm" placeholder="e.g. logo-final-v3.fig" value={uploadName} onChange={e => setUploadName(e.target.value)} />
+                  <input className="CODEVATE-input w-full shadow-sm" placeholder="e.g. logo-final-v3.fig" value={uploadName} onChange={e => setUploadName(e.target.value)} />
                 </div>
                 <div className="border-2 border-dashed border-gray-300 rounded-2xl p-10 flex flex-col items-center text-[var(--text-secondary)] hover:bg-[var(--bg-hover)] hover:border-[var(--accent)] cursor-pointer transition-all">
                   <Upload size={32} className="mb-3 text-gray-400" />
                   <span className="text-sm font-medium">Drop file or click to browse</span>
                 </div>
                 <button onClick={() => handleUpload(uploadPanel.projectId)}
-                  className="vlocal-btn bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white w-full h-12 text-base font-semibold shadow-md shadow-[var(--accent-glow)] mt-2">
+                  className="CODEVATE-btn bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white w-full h-12 text-base font-semibold shadow-md shadow-[var(--accent-glow)] mt-2">
                   Upload
                 </button>
               </div>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { motion } from "motion/react";
 import {
   LayoutDashboard,
@@ -66,7 +66,7 @@ export function ClientDashboard() {
           <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center shadow-md">
             <span className="text-white font-extrabold text-xl">V</span>
           </div>
-          <span className="font-bold text-lg text-primary hidden md:block">VLOCAL</span>
+          <span className="font-bold text-lg text-primary hidden md:block">CODEVATE</span>
         </div>
 
         {/* Desktop Navigation */}

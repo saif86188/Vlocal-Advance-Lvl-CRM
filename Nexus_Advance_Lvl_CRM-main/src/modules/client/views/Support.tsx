@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { useClientStore } from '@/modules/client/data/store';
 import { X, Send, Plus, Phone, Mail, MessageCircle, AlertCircle, Shield, Clock, CheckCircle2 } from 'lucide-react';
 import { toast } from 'sonner';
@@ -57,7 +57,7 @@ export function Support() {
   const accountManager = {
     name: "Sarah Mitchell",
     role: "Senior Account Manager",
-    email: "sarah.mitchell@vlocal.com",
+    email: "sarah.mitchell@CODEVATE.com",
     phone: "+1 (555) 123-4567",
     avatar: "SM",
     availability: "Mon-Fri, 9AM-6PM EST",
@@ -69,7 +69,7 @@ export function Support() {
       title: "Campaign Support",
       name: "David Chen",
       role: "Campaign Coordinator",
-      email: "david.chen@vlocal.com",
+      email: "david.chen@CODEVATE.com",
       phone: "+1 (555) 234-5678",
       avatar: "DC",
       responseTime: "Within 2 hours",
@@ -82,7 +82,7 @@ export function Support() {
       title: "Account Management",
       name: "Sarah Mitchell",
       role: "Senior Account Manager",
-      email: "sarah.mitchell@vlocal.com",
+      email: "sarah.mitchell@CODEVATE.com",
       phone: "+1 (555) 123-4567",
       avatar: "SM",
       responseTime: "Within 4 hours",
@@ -95,7 +95,7 @@ export function Support() {
       title: "Director Level",
       name: "Michael Torres",
       role: "Director of Client Success",
-      email: "michael.torres@vlocal.com",
+      email: "michael.torres@CODEVATE.com",
       phone: "+1 (555) 345-6789",
       avatar: "MT",
       responseTime: "Within 8 hours",
@@ -378,7 +378,7 @@ export function Support() {
               {ticket.thread.map(msg => (
                 <div key={msg.id} className={`flex ${msg.senderRole === 'client' ? 'justify-end' : 'justify-start'}`}>
                   <div className={`max-w-[85%] rounded-[12px] p-3.5 text-[13px] leading-relaxed ${msg.senderRole === 'client' ? 'bg-[var(--accent)] text-[var(--bg-base)] rounded-tr-none font-medium' : 'bg-[var(--bg-elevated)] border border-[var(--border-default)] text-[var(--text-primary)] rounded-tl-none font-medium'}`}>
-                    <div className={`text-[11px] font-bold mb-1.5 ${msg.senderRole === 'client' ? 'text-[var(--bg-base)]/80' : 'text-[var(--text-muted)]'}`}>{msg.senderRole === 'client' ? 'You' : 'VLOCAL Support'} • {new Date(msg.timestamp).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}</div>
+                    <div className={`text-[11px] font-bold mb-1.5 ${msg.senderRole === 'client' ? 'text-[var(--bg-base)]/80' : 'text-[var(--text-muted)]'}`}>{msg.senderRole === 'client' ? 'You' : 'CODEVATE Support'} • {new Date(msg.timestamp).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}</div>
                     {msg.content}
                   </div>
                 </div>

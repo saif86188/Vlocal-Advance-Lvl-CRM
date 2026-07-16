@@ -1,4 +1,4 @@
-import { Types } from 'mongoose';
+﻿import { Types } from 'mongoose';
 import { connectDB } from '@/lib/mongodb';
 import { requireAuth } from '@/lib/api-auth';
 import { ok, handleApiError } from '@/lib/api-response';
@@ -88,8 +88,8 @@ export async function GET() {
         finalPending = 12;
         finalRevenue = 320000;
         finalLatest = [
-          { name: 'Saif Client', email: 'saif@vlocal.com', company: 'Nexus Industries', createdAt: new Date(Date.now() - 5 * 86400000).toISOString() },
-          { name: 'Apex Client', email: 'apex@vlocal.com', company: 'Apex Corp', createdAt: new Date(Date.now() - 10 * 86400000).toISOString() }
+          { name: 'Saif Client', email: 'saif@CODEVATE.com', company: 'Nexus Industries', createdAt: new Date(Date.now() - 5 * 86400000).toISOString() },
+          { name: 'Apex Client', email: 'apex@CODEVATE.com', company: 'Apex Corp', createdAt: new Date(Date.now() - 10 * 86400000).toISOString() }
         ] as any;
         finalActivities = [
           { action: 'PROJECT_CREATED', description: 'Project Enterprise CRM Overhaul created by Admin', timestamp: new Date(Date.now() - 1 * 3600000).toISOString() },

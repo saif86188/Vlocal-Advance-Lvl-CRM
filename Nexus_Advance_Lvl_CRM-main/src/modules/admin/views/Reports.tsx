@@ -1,4 +1,4 @@
-import { BarChart, Download, Calendar, TrendingUp, PieChart, Activity } from "lucide-react";
+﻿import { BarChart, Download, Calendar, TrendingUp, PieChart, Activity } from "lucide-react";
 
 const performanceData = [
   { month: "Jan", campaigns: 12, revenue: 42000, activities: 234 },
@@ -25,11 +25,11 @@ export function Reports() {
           <p className="text-[var(--text-secondary)] mt-1">Insights and performance metrics</p>
         </div>
         <div className="flex gap-2">
-          <button className="vlocal-btn border border-[var(--border-default)] hover:bg-[var(--bg-hover)] bg-white/50 text-[var(--text-primary)]">
+          <button className="CODEVATE-btn border border-[var(--border-default)] hover:bg-[var(--bg-hover)] bg-white/50 text-[var(--text-primary)]">
             <Calendar className="w-5 h-5 mr-1" />
             Date Range
           </button>
-          <button className="vlocal-btn bg-[var(--accent)] text-neutral-900 shadow-sm hover:scale-[1.02] border border-neutral-900">
+          <button className="CODEVATE-btn bg-[var(--accent)] text-neutral-900 shadow-sm hover:scale-[1.02] border border-neutral-900">
             <Download className="w-5 h-5 mr-1" />
             Export
           </button>

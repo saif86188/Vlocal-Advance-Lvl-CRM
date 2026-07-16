@@ -1,4 +1,4 @@
-import { Plus, Search, MoreVertical, Mail, Shield, User } from "lucide-react";
+﻿import { Plus, Search, MoreVertical, Mail, Shield, User } from "lucide-react";
 
 const users = [
   {
@@ -84,7 +84,7 @@ export function UserManagement() {
           <h1 className="text-3xl sm:text-4xl font-display font-medium">User Management</h1>
           <p className="text-[var(--text-secondary)] mt-1">Manage team members and permissions</p>
         </div>
-        <button className="vlocal-btn bg-[var(--accent)] text-neutral-900 shadow-sm hover:scale-[1.02] border border-neutral-900">
+        <button className="CODEVATE-btn bg-[var(--accent)] text-neutral-900 shadow-sm hover:scale-[1.02] border border-neutral-900">
           <Plus className="w-5 h-5 mr-1" />
           Add User
         </button>
@@ -219,10 +219,10 @@ export function UserManagement() {
         <div className="px-6 py-4 border-t border-[var(--border-subtle)] flex items-center justify-between">
           <p className="text-[13px] text-[var(--text-secondary)]">Showing 1 to 5 of 22 users</p>
           <div className="flex gap-2">
-            <button className="vlocal-btn-sm border border-[var(--border-default)] hover:bg-[var(--bg-hover)] bg-white text-[var(--text-primary)]">
+            <button className="CODEVATE-btn-sm border border-[var(--border-default)] hover:bg-[var(--bg-hover)] bg-white text-[var(--text-primary)]">
               Previous
             </button>
-            <button className="vlocal-btn-sm bg-[var(--accent)] text-neutral-900 shadow-sm hover:scale-[1.02] border border-neutral-900/10">
+            <button className="CODEVATE-btn-sm bg-[var(--accent)] text-neutral-900 shadow-sm hover:scale-[1.02] border border-neutral-900/10">
               Next
             </button>
           </div>

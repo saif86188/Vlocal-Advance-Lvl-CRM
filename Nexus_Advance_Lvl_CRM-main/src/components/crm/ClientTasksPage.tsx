@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useEffect, useState } from 'react';
 import { toast } from 'sonner';
@@ -157,7 +157,7 @@ export function ClientTasksPage() {
                   </span>
 
                   <select 
-                    className="vlocal-input h-10 px-3 bg-neutral-50 hover:bg-neutral-100 border-neutral-200 focus:bg-white rounded-xl font-bold cursor-pointer text-xs min-w-[130px] transition" 
+                    className="CODEVATE-input h-10 px-3 bg-neutral-50 hover:bg-neutral-100 border-neutral-200 focus:bg-white rounded-xl font-bold cursor-pointer text-xs min-w-[130px] transition" 
                     value={task.status} 
                     onChange={(e) => updateStatus(task._id, e.target.value as any)}
                   >

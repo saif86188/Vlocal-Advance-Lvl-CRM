@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { FormEvent, useEffect, useState } from 'react';
 import { toast } from 'sonner';
@@ -158,7 +158,7 @@ export function ClientProfilePage() {
                 <label className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-400 px-1">Full Name</label>
                 <div className="relative">
                   <input 
-                    className="vlocal-input w-full !pl-11" 
+                    className="CODEVATE-input w-full !pl-11" 
                     value={profile.name} 
                     onChange={(e) => setProfile({ ...profile, name: e.target.value })} 
                     placeholder="e.g. Saif Client" 
@@ -172,7 +172,7 @@ export function ClientProfilePage() {
                 <label className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-400 px-1">Email Address</label>
                 <div className="relative">
                   <input 
-                    className="vlocal-input w-full !pl-11 bg-neutral-50/70 border-neutral-200 cursor-not-allowed opacity-70" 
+                    className="CODEVATE-input w-full !pl-11 bg-neutral-50/70 border-neutral-200 cursor-not-allowed opacity-70" 
                     value={profile.email} 
                     disabled 
                     placeholder="Email Address" 
@@ -185,10 +185,10 @@ export function ClientProfilePage() {
                 <label className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-400 px-1">Company / Organization</label>
                 <div className="relative">
                   <input 
-                    className="vlocal-input w-full !pl-11" 
+                    className="CODEVATE-input w-full !pl-11" 
                     value={profile.company} 
                     onChange={(e) => setProfile({ ...profile, company: e.target.value })} 
-                    placeholder="e.g. Vlocal Corp" 
+                    placeholder="e.g. CODEVATE Corp" 
                   />
                   <Building size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-400" />
                 </div>
@@ -198,7 +198,7 @@ export function ClientProfilePage() {
                 <label className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-400 px-1">Phone Number</label>
                 <div className="relative">
                   <input 
-                    className="vlocal-input w-full !pl-11" 
+                    className="CODEVATE-input w-full !pl-11" 
                     value={profile.phone} 
                     onChange={(e) => setProfile({ ...profile, phone: e.target.value })} 
                     placeholder="e.g. +1 (555) 000-0000" 
@@ -212,7 +212,7 @@ export function ClientProfilePage() {
           <button 
             type="submit" 
             disabled={isSavingProfile}
-            className="vlocal-btn bg-neutral-900 text-white font-bold hover:bg-black transition flex items-center justify-center gap-2 self-start mt-6 w-full sm:w-auto"
+            className="CODEVATE-btn bg-neutral-900 text-white font-bold hover:bg-black transition flex items-center justify-center gap-2 self-start mt-6 w-full sm:w-auto"
           >
             {isSavingProfile ? (
               <RefreshCw className="h-4 w-4 animate-spin" />
@@ -237,7 +237,7 @@ export function ClientProfilePage() {
                 <div className="relative">
                   <input 
                     type={showCurrentPassword ? 'text' : 'password'}
-                    className="vlocal-input w-full !pl-11 !pr-12 bg-neutral-50/50 border-neutral-200 focus:bg-white text-neutral-850 placeholder-neutral-400" 
+                    className="CODEVATE-input w-full !pl-11 !pr-12 bg-neutral-50/50 border-neutral-200 focus:bg-white text-neutral-850 placeholder-neutral-400" 
                     placeholder="Enter current password"
                     value={passwordForm.currentPassword}
                     onChange={(e) => setPasswordForm({ ...passwordForm, currentPassword: e.target.value })}
@@ -259,7 +259,7 @@ export function ClientProfilePage() {
                 <div className="relative">
                   <input 
                     type={showNewPassword ? 'text' : 'password'}
-                    className="vlocal-input w-full !pl-11 !pr-12 bg-neutral-50/50 border-neutral-200 focus:bg-white text-neutral-850 placeholder-neutral-400" 
+                    className="CODEVATE-input w-full !pl-11 !pr-12 bg-neutral-50/50 border-neutral-200 focus:bg-white text-neutral-850 placeholder-neutral-400" 
                     placeholder="Minimum 8 characters"
                     minLength={8}
                     value={passwordForm.newPassword}
@@ -282,7 +282,7 @@ export function ClientProfilePage() {
           <button 
             type="submit" 
             disabled={isSavingPassword}
-            className="vlocal-btn bg-[var(--accent)] text-neutral-900 font-bold hover:brightness-110 transition flex items-center justify-center gap-2 self-start mt-6 w-full sm:w-auto"
+            className="CODEVATE-btn bg-[var(--accent)] text-neutral-900 font-bold hover:brightness-110 transition flex items-center justify-center gap-2 self-start mt-6 w-full sm:w-auto"
           >
             {isSavingPassword ? (
               <RefreshCw className="h-4 w-4 animate-spin" />

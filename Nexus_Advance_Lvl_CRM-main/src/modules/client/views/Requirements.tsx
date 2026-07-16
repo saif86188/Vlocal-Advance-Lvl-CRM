@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { useClientStore } from '@/modules/client/data/store';
 import { Plus, X, Upload } from 'lucide-react';
 import { toast } from 'sonner';
@@ -54,7 +54,7 @@ export function Requirements() {
     setIsOpen(false);
     form.reset();
     setCharCount(0);
-    toast.success('Requirement submitted — VLOCAL team will review within 24 hours');
+    toast.success('Requirement submitted — CODEVATE team will review within 24 hours');
   };
 
   return (
@@ -64,7 +64,7 @@ export function Requirements() {
           <h1>My Requirements</h1>
           <p className="text-[var(--text-secondary)] mt-1">{state.requirements.length} total submissions</p>
         </div>
-        <button onClick={() => setIsOpen(true)} className="vlocal-btn bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white gap-2">
+        <button onClick={() => setIsOpen(true)} className="CODEVATE-btn bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white gap-2">
           <Plus size={15} /> New Requirement
         </button>
       </div>
@@ -142,26 +142,26 @@ export function Requirements() {
             <form onSubmit={handleSubmit} className="flex-1 overflow-y-auto p-5 flex flex-col gap-5 max-h-[85vh] custom-scrollbar">
               <div className="flex flex-col gap-1.5">
                 <label className="caption">Project Title *</label>
-                <input name="title" type="text" className="vlocal-input w-full" placeholder="e.g. E-commerce Website Redesign" required />
+                <input name="title" type="text" className="CODEVATE-input w-full" placeholder="e.g. E-commerce Website Redesign" required />
               </div>
               <div className="flex flex-col gap-1.5">
                 <label className="caption flex justify-between">
                   <span>Requirement Description *</span>
                   <span className="text-[var(--text-muted)]">{charCount}/500</span>
                 </label>
-                <textarea name="description" className="vlocal-input py-2 min-h-[100px] resize-none w-full" rows={4}
+                <textarea name="description" className="CODEVATE-input py-2 min-h-[100px] resize-none w-full" rows={4}
                   placeholder="Describe what you need in detail..." maxLength={500} required onChange={e => setCharCount(e.target.value.length)} />
               </div>
               <div className="flex flex-col gap-1.5">
                 <label className="caption">Budget Expectation *</label>
                 <div className="relative">
                   <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--text-secondary)] text-[13px]">₹</span>
-                  <input name="budget" type="number" className="vlocal-input pl-7 w-full" placeholder="50000" required />
+                  <input name="budget" type="number" className="CODEVATE-input pl-7 w-full" placeholder="50000" required />
                 </div>
               </div>
               <div className="flex flex-col gap-1.5">
                 <label className="caption">Deadline *</label>
-                <input name="deadline" type="date" className="vlocal-input w-full" required />
+                <input name="deadline" type="date" className="CODEVATE-input w-full" required />
               </div>
               <div className="flex flex-col gap-1.5">
                 <label className="caption">Priority</label>
@@ -187,8 +187,8 @@ export function Requirements() {
                 </label>
               </div>
               <div className="flex gap-3 pt-2">
-                <button type="button" onClick={() => setIsOpen(false)} className="vlocal-btn flex-1 border border-[var(--border-default)] hover:bg-[var(--bg-hover)]">Cancel</button>
-                <button type="submit" className="vlocal-btn flex-1 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white">Submit Requirement</button>
+                <button type="button" onClick={() => setIsOpen(false)} className="CODEVATE-btn flex-1 border border-[var(--border-default)] hover:bg-[var(--bg-hover)]">Cancel</button>
+                <button type="submit" className="CODEVATE-btn flex-1 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white">Submit Requirement</button>
               </div>
             </form>
           </div>

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { FormEvent, useEffect, useState } from 'react';
 import { toast } from 'sonner';
@@ -152,7 +152,7 @@ export function AdminTasksPage() {
       {/* Task Creation Form */}
       <form onSubmit={createTask} className="grid grid-cols-1 md:grid-cols-3 gap-4 p-6 rounded-3xl border border-neutral-200 bg-white shadow-sm">
         <input 
-          className="vlocal-input w-full" 
+          className="CODEVATE-input w-full" 
           placeholder="Task title" 
           value={form.title} 
           onChange={(e) => setForm({ ...form, title: e.target.value })} 
@@ -160,7 +160,7 @@ export function AdminTasksPage() {
         />
         
         <select
-          className="vlocal-input w-full"
+          className="CODEVATE-input w-full"
           value={form.projectId}
           onChange={(e) => {
             const selected = projects.find((p) => p._id === e.target.value);
@@ -177,7 +177,7 @@ export function AdminTasksPage() {
         </select>
 
         <select 
-          className="vlocal-input w-full" 
+          className="CODEVATE-input w-full" 
           value={form.priority} 
           onChange={(e) => setForm({ ...form, priority: e.target.value as any })}
         >
@@ -187,7 +187,7 @@ export function AdminTasksPage() {
         </select>
 
         <select
-          className="vlocal-input w-full"
+          className="CODEVATE-input w-full"
           value={form.assignedTo}
           onChange={(e) => setForm({ ...form, assignedTo: e.target.value })}
         >
@@ -201,12 +201,12 @@ export function AdminTasksPage() {
 
         <input 
           type="datetime-local" 
-          className="vlocal-input w-full" 
+          className="CODEVATE-input w-full" 
           value={form.dueDate} 
           onChange={(e) => setForm({ ...form, dueDate: e.target.value })} 
         />
 
-        <button className="vlocal-btn bg-neutral-900 text-white font-bold cursor-pointer">
+        <button className="CODEVATE-btn bg-neutral-900 text-white font-bold cursor-pointer">
           Create Task
         </button>
       </form>

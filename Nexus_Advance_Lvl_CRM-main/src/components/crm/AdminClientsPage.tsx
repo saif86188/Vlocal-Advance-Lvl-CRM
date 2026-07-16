@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { FormEvent, useEffect, useState } from 'react';
 import { toast } from 'sonner';
@@ -149,7 +149,7 @@ export function AdminClientsPage() {
           <p className="text-sm text-[var(--text-secondary)] font-medium">Manage corporate user accounts</p>
         </div>
         <button 
-          className="vlocal-btn bg-[var(--accent)] text-neutral-900 font-bold shadow-md hover:scale-[1.02] active:scale-[0.98] transition cursor-pointer" 
+          className="CODEVATE-btn bg-[var(--accent)] text-neutral-900 font-bold shadow-md hover:scale-[1.02] active:scale-[0.98] transition cursor-pointer" 
           onClick={() => setShowCreate((v) => !v)}
         >
           {showCreate ? 'Cancel' : 'Create Client'}
@@ -160,7 +160,7 @@ export function AdminClientsPage() {
       <form onSubmit={onSearchSubmit} className="flex flex-wrap gap-3 items-center">
         <div className="relative w-72">
           <input 
-            className="vlocal-input w-full !pl-11" 
+            className="CODEVATE-input w-full !pl-11" 
             placeholder="Search clients..." 
             value={search} 
             onChange={(e) => setSearch(e.target.value)} 
@@ -169,7 +169,7 @@ export function AdminClientsPage() {
         </div>
         
         <select 
-          className="vlocal-input w-44" 
+          className="CODEVATE-input w-44" 
           value={status} 
           onChange={(e) => setStatus(e.target.value)}
         >
@@ -178,7 +178,7 @@ export function AdminClientsPage() {
           <option value="inactive">Inactive</option>
         </select>
         
-        <button type="submit" className="vlocal-btn border border-neutral-300 bg-white font-semibold cursor-pointer">
+        <button type="submit" className="CODEVATE-btn border border-neutral-300 bg-white font-semibold cursor-pointer">
           Apply Filter
         </button>
       </form>
@@ -188,33 +188,33 @@ export function AdminClientsPage() {
         <form onSubmit={createClient} className="grid grid-cols-1 md:grid-cols-2 gap-4 p-6 rounded-3xl border border-neutral-200 bg-white shadow-sm animate-in fade-in duration-300">
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider mb-2 text-neutral-500">Contact Name</label>
-            <input className="vlocal-input w-full" placeholder="e.g. Saif Client" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} required />
+            <input className="CODEVATE-input w-full" placeholder="e.g. Saif Client" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} required />
           </div>
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider mb-2 text-neutral-500">Company Name</label>
-            <input className="vlocal-input w-full" placeholder="e.g. Nexus Industries" value={form.companyName} onChange={(e) => setForm({ ...form, companyName: e.target.value })} required />
+            <input className="CODEVATE-input w-full" placeholder="e.g. Nexus Industries" value={form.companyName} onChange={(e) => setForm({ ...form, companyName: e.target.value })} required />
           </div>
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider mb-2 text-neutral-500">Email Address</label>
-            <input className="vlocal-input w-full" type="email" placeholder="saif@vlocal.com" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} required />
+            <input className="CODEVATE-input w-full" type="email" placeholder="saif@CODEVATE.com" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} required />
           </div>
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider mb-2 text-neutral-500">Industry</label>
-            <input className="vlocal-input w-full" placeholder="e.g. Technology" value={form.industry} onChange={(e) => setForm({ ...form, industry: e.target.value })} />
+            <input className="CODEVATE-input w-full" placeholder="e.g. Technology" value={form.industry} onChange={(e) => setForm({ ...form, industry: e.target.value })} />
           </div>
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider mb-2 text-neutral-500">Phone</label>
-            <input className="vlocal-input w-full" placeholder="+1 (555) 000-0000" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} />
+            <input className="CODEVATE-input w-full" placeholder="+1 (555) 000-0000" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} />
           </div>
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider mb-2 text-neutral-500">Temporary Password</label>
-            <input className="vlocal-input w-full" type="text" placeholder="tempPassword123!" value={form.password} onChange={(e) => setForm({ ...form, password: e.target.value })} required />
+            <input className="CODEVATE-input w-full" type="text" placeholder="tempPassword123!" value={form.password} onChange={(e) => setForm({ ...form, password: e.target.value })} required />
           </div>
           <div className="md:col-span-2">
             <label className="block text-xs font-bold uppercase tracking-wider mb-2 text-neutral-500">Internal Notes</label>
-            <textarea className="vlocal-input w-full h-20 py-2.5 resize-none" placeholder="Notes for this client..." value={form.notes} onChange={(e) => setForm({ ...form, notes: e.target.value })} />
+            <textarea className="CODEVATE-input w-full h-20 py-2.5 resize-none" placeholder="Notes for this client..." value={form.notes} onChange={(e) => setForm({ ...form, notes: e.target.value })} />
           </div>
-          <button className="vlocal-btn bg-neutral-900 text-white md:col-span-2 font-bold cursor-pointer">Save Client Profile</button>
+          <button className="CODEVATE-btn bg-neutral-900 text-white md:col-span-2 font-bold cursor-pointer">Save Client Profile</button>
         </form>
       )}
 
@@ -288,14 +288,14 @@ export function AdminClientsPage() {
         </span>
         <div className="flex gap-2">
           <button 
-            className="vlocal-btn vlocal-btn-sm border border-neutral-300 bg-white font-semibold disabled:opacity-50 cursor-pointer" 
+            className="CODEVATE-btn CODEVATE-btn-sm border border-neutral-300 bg-white font-semibold disabled:opacity-50 cursor-pointer" 
             onClick={() => setPage((p) => Math.max(1, p - 1))} 
             disabled={page === 1}
           >
             Previous
           </button>
           <button
-            className="vlocal-btn vlocal-btn-sm border border-neutral-300 bg-white font-semibold disabled:opacity-50 cursor-pointer"
+            className="CODEVATE-btn CODEVATE-btn-sm border border-neutral-300 bg-white font-semibold disabled:opacity-50 cursor-pointer"
             onClick={() => setPage((p) => (p < Math.ceil(total / pageSize) ? p + 1 : p))}
             disabled={page >= Math.ceil(total / pageSize)}
           >
@@ -389,13 +389,13 @@ export function AdminClientsPage() {
               <div className="flex gap-3 mt-6 pt-4 border-t border-neutral-100">
                 <button 
                   onClick={(e) => toggleStatus(selectedClient, e)}
-                  className="vlocal-btn flex-1 bg-neutral-900 text-white font-bold cursor-pointer"
+                  className="CODEVATE-btn flex-1 bg-neutral-900 text-white font-bold cursor-pointer"
                 >
                   {selectedClient.status === 'active' ? 'Deactivate' : 'Activate'}
                 </button>
                 <button 
                   onClick={(e) => deleteClient(selectedClient._id, e)}
-                  className="vlocal-btn bg-red-100 hover:bg-red-200 text-red-600 font-bold p-2.5 rounded-full cursor-pointer"
+                  className="CODEVATE-btn bg-red-100 hover:bg-red-200 text-red-600 font-bold p-2.5 rounded-full cursor-pointer"
                 >
                   <Trash2 size={16} />
                 </button>

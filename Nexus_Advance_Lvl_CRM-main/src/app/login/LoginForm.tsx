@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { FormEvent, useState } from 'react';
 import Link from 'next/link';
@@ -146,10 +146,10 @@ export function LoginForm() {
       >
         <Link href="/" className="flex items-center gap-3 mb-6 group transition duration-300 hover:scale-[1.02]">
           <div className="relative w-10 h-10 rounded-xl overflow-hidden shadow-md flex items-center justify-center bg-white border border-neutral-100">
-            <Image src="/icon.png" alt="Vlocal Logo" fill className="object-cover" />
+            <Image src="/icon.png" alt="CODEVATE Logo" fill className="object-cover" />
           </div>
           <span className="font-display text-lg font-bold text-[var(--text-primary)] tracking-tight">
-            Vlocal<span className="text-[var(--accent)] italic">Portal</span>
+            CODEVATE<span className="text-[var(--accent)] italic">Portal</span>
           </span>
         </Link>
       </motion.div>
@@ -185,7 +185,7 @@ export function LoginForm() {
               <input
                 id="email"
                 type="email"
-                className="vlocal-input input-glow w-full !pl-11"
+                className="CODEVATE-input input-glow w-full !pl-11"
                 placeholder="you@company.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -207,7 +207,7 @@ export function LoginForm() {
               <input
                 id="password"
                 type={showPassword ? 'text' : 'password'}
-                className="vlocal-input input-glow w-full !pl-11 !pr-12"
+                className="CODEVATE-input input-glow w-full !pl-11 !pr-12"
                 placeholder="••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -236,7 +236,7 @@ export function LoginForm() {
             <button
               type="submit"
               disabled={loading}
-              className="vlocal-btn gold-shimmer w-full bg-[var(--accent)] text-neutral-900 font-bold flex items-center justify-center gap-2 cursor-pointer shadow-lg"
+              className="CODEVATE-btn gold-shimmer w-full bg-[var(--accent)] text-neutral-900 font-bold flex items-center justify-center gap-2 cursor-pointer shadow-lg"
             >
               {loading ? (
                 <>

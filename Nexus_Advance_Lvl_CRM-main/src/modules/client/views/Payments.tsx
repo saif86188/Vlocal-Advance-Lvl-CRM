@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { useClientStore } from '@/modules/client/data/store';
 import { X, Download } from 'lucide-react';
 import { toast } from 'sonner';
@@ -90,7 +90,7 @@ export function Payments() {
                       </button>
                     ) : (
                       <button onClick={() => { setSelectedInvoice(inv); setPayMethod('UPI'); }}
-                        className="vlocal-btn bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white text-[11.5px] h-[28px] px-3">
+                        className="CODEVATE-btn bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white text-[11.5px] h-[28px] px-3">
                         Pay Now
                       </button>
                     )}
@@ -142,27 +142,27 @@ export function Payments() {
                 {payMethod === 'UPI' && (
                   <div className="border border-[var(--border-default)] rounded-[var(--radius-sm)] p-5 flex flex-col items-center gap-3">
                     <div className="w-28 h-28 bg-white rounded-md flex items-center justify-center">
-                      <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=vlocal@upi" alt="UPI QR" className="opacity-90" />
+                      <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=CODEVATE@upi" alt="UPI QR" className="opacity-90" />
                     </div>
-                    <input className="vlocal-input w-full text-center text-[13px]" placeholder="Enter UPI ID (e.g. name@okhdfc)" />
+                    <input className="CODEVATE-input w-full text-center text-[13px]" placeholder="Enter UPI ID (e.g. name@okhdfc)" />
                   </div>
                 )}
 
                 {payMethod === 'Card' && (
                   <div className="flex flex-col gap-3">
-                    <input className="vlocal-input w-full" placeholder="Card Number" maxLength={16} />
+                    <input className="CODEVATE-input w-full" placeholder="Card Number" maxLength={16} />
                     <div className="flex gap-3">
-                      <input className="vlocal-input flex-1" placeholder="MM/YY" />
-                      <input className="vlocal-input flex-1" placeholder="CVV" maxLength={3} />
+                      <input className="CODEVATE-input flex-1" placeholder="MM/YY" />
+                      <input className="CODEVATE-input flex-1" placeholder="CVV" maxLength={3} />
                     </div>
-                    <input className="vlocal-input w-full" placeholder="Cardholder Name" />
+                    <input className="CODEVATE-input w-full" placeholder="Cardholder Name" />
                   </div>
                 )}
 
                 {payMethod === 'Net Banking' && (
                   <div>
                     <label className="caption block mb-2">Select Your Bank</label>
-                    <select className="vlocal-input w-full">
+                    <select className="CODEVATE-input w-full">
                       <option value="">Select bank…</option>
                       {['HDFC Bank', 'SBI', 'ICICI Bank', 'Axis Bank', 'Kotak Mahindra Bank', 'Yes Bank', 'Bank of Baroda'].map(b => (
                         <option key={b} value={b}>{b}</option>
@@ -190,7 +190,7 @@ export function Payments() {
                 )}
 
                 <button onClick={handlePay}
-                  className="vlocal-btn bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white w-full text-[15px] font-semibold mt-2">
+                  className="CODEVATE-btn bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white w-full text-[15px] font-semibold mt-2">
                   Pay {fmt(selectedInvoice.total)}
                 </button>
               </div>

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -56,7 +56,7 @@ export default function ClientSettingsPage() {
         <button 
           onClick={handleSave}
           disabled={isSaving}
-          className="vlocal-btn bg-neutral-900 text-white hover:bg-black min-w-[180px] shadow-lg hover:scale-[1.02] disabled:opacity-50 disabled:scale-100 transition flex gap-2 justify-center items-center group py-3"
+          className="CODEVATE-btn bg-neutral-900 text-white hover:bg-black min-w-[180px] shadow-lg hover:scale-[1.02] disabled:opacity-50 disabled:scale-100 transition flex gap-2 justify-center items-center group py-3"
         >
           {isSaving ? <RefreshCw className="animate-spin h-4 w-4" /> : <Save className="h-4 w-4 group-hover:scale-110 transition-transform" />}
           <span className="uppercase tracking-[0.1em] text-[10px] font-black">Save Changes</span>
@@ -133,7 +133,7 @@ export default function ClientSettingsPage() {
                       <select 
                         value={state.settings.language}
                         onChange={(e) => handleUpdate({ language: e.target.value })}
-                        className="vlocal-input w-full bg-neutral-50/50 hover:bg-neutral-50 border-neutral-200 focus:bg-white rounded-2xl px-5 font-bold cursor-pointer transition text-xs py-3.5"
+                        className="CODEVATE-input w-full bg-neutral-50/50 hover:bg-neutral-50 border-neutral-200 focus:bg-white rounded-2xl px-5 font-bold cursor-pointer transition text-xs py-3.5"
                       >
                          <option>English</option>
                          <option>Spanish</option>
@@ -149,7 +149,7 @@ export default function ClientSettingsPage() {
                       <select 
                         value={state.settings.timezone}
                         onChange={(e) => handleUpdate({ timezone: e.target.value })}
-                        className="vlocal-input w-full bg-neutral-50/50 hover:bg-neutral-50 border-neutral-200 focus:bg-white rounded-2xl px-5 font-bold cursor-pointer transition text-xs py-3.5"
+                        className="CODEVATE-input w-full bg-neutral-50/50 hover:bg-neutral-50 border-neutral-200 focus:bg-white rounded-2xl px-5 font-bold cursor-pointer transition text-xs py-3.5"
                       >
                          <option value="UTC-8">Pacific Time (PT)</option>
                          <option value="UTC-5">Eastern Time (ET)</option>
@@ -176,7 +176,7 @@ export default function ClientSettingsPage() {
                       <select 
                         value={state.settings.currency}
                         onChange={(e) => handleUpdate({ currency: e.target.value })}
-                        className="vlocal-input w-full bg-neutral-50/50 hover:bg-neutral-50 border-neutral-200 focus:bg-white rounded-2xl px-5 font-bold cursor-pointer transition text-xs py-3.5"
+                        className="CODEVATE-input w-full bg-neutral-50/50 hover:bg-neutral-50 border-neutral-200 focus:bg-white rounded-2xl px-5 font-bold cursor-pointer transition text-xs py-3.5"
                       >
                          <option>USD ($)</option>
                          <option>EUR (€)</option>

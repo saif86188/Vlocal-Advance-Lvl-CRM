@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { createContext, useContext, useReducer, useEffect, ReactNode } from 'react';
 import {
@@ -7,8 +7,8 @@ import {
 } from './mock';
 import { Requirement, Proposal, Project, Payment, Discussion, EscalationTicket } from './models';
 
-const CLIENT_REQ_KEY = 'vlocal_client_requirements';
-const ADMIN_PROPOSALS_KEY = 'vlocal_admin_proposals';
+const CLIENT_REQ_KEY = 'CODEVATE_client_requirements';
+const ADMIN_PROPOSALS_KEY = 'CODEVATE_admin_proposals';
 
 interface ClientProfile {
   name: string;
@@ -88,8 +88,8 @@ function getInitialState(): ClientState {
     tickets: mockTickets,
     profile: {
       name: 'saif',
-      company: 'Vlocal Corp',
-      email: 'saif@vlocal.com',
+      company: 'CODEVATE Corp',
+      email: 'saif@CODEVATE.com',
       avatar: 'S',
       phone: '+1 (555) 000-1234',
       industry: 'Technology',

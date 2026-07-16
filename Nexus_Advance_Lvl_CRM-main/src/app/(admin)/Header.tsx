@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -102,7 +102,7 @@ export function Header({ title }: { title: string }) {
             }}
             className="border-2 border-neutral-900 bg-neutral-900 hover:bg-black rounded-full px-4 md:px-6 py-2 flex items-center justify-center transition-all duration-200 shadow-xl hover:scale-[1.02] cursor-pointer"
           >
-            <span className="font-display font-black text-lg md:text-xl tracking-tighter text-white">Vlocal<span className="text-[var(--accent)] font-bold">Core</span></span>
+            <span className="font-display font-black text-lg md:text-xl tracking-tighter text-white">CODEVATE<span className="text-[var(--accent)] font-bold">Core</span></span>
           </button>
         </div>
 

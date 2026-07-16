@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { Plus, Calendar, Target, DollarSign, MoreVertical, Filter } from "lucide-react";
 
 const campaigns = [
@@ -75,7 +75,7 @@ export function CampaignManagement() {
           <h1 className="text-3xl sm:text-4xl font-display font-medium">Campaign Management</h1>
           <p className="text-[var(--text-secondary)] mt-1">Create and manage marketing campaigns</p>
         </div>
-        <button className="vlocal-btn bg-[var(--accent)] text-neutral-900 shadow-sm hover:scale-[1.02] border border-neutral-900">
+        <button className="CODEVATE-btn bg-[var(--accent)] text-neutral-900 shadow-sm hover:scale-[1.02] border border-neutral-900">
           <Plus className="w-5 h-5 mr-1" />
           New Campaign
         </button>

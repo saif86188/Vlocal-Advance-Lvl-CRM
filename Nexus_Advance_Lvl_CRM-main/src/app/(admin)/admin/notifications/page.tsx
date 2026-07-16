@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -95,7 +95,7 @@ export default function NotificationsPage() {
               placeholder="Search intelligence..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="vlocal-input w-full pl-12 rounded-2xl bg-white/60 border-neutral-100 focus:bg-white"
+              className="CODEVATE-input w-full pl-12 rounded-2xl bg-white/60 border-neutral-100 focus:bg-white"
             />
          </div>
       </div>

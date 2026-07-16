@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useEffect, useMemo, useState } from 'react';
 import { toast } from 'sonner';
@@ -154,7 +154,7 @@ export function AdminDashboardHome() {
           <p className="text-sm text-[var(--text-secondary)] font-medium">CRM platform statistics and logs</p>
         </div>
         <button
-          className="vlocal-btn bg-[var(--accent)] text-neutral-900 font-bold transition hover:scale-[1.02] active:scale-[0.98] shadow-md hover:shadow-lg cursor-pointer"
+          className="CODEVATE-btn bg-[var(--accent)] text-neutral-900 font-bold transition hover:scale-[1.02] active:scale-[0.98] shadow-md hover:shadow-lg cursor-pointer"
           onClick={() => toast.info('Access sidebar navigation to manage clients, projects, tasks')}
         >
           Quick Actions

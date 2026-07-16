@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+﻿import { NextResponse } from 'next/server';
 import { connectDB } from '@/lib/mongodb';
 import {
   User,
@@ -35,17 +35,17 @@ export async function GET() {
     // 1. Create Users
     const adminUser = await User.create({
       name: 'Admin User',
-      email: 'admin@vlocal.com',
+      email: 'admin@CODEVATE.com',
       password: 'password123',
       role: 'admin',
-      company: 'Vlocal Core',
+      company: 'CODEVATE Core',
       phone: '+1 (555) 111-2222',
       avatarUrl: 'https://avatar.iran.liara.run/public/boy?username=admin',
     });
 
     const clientUser = await User.create({
       name: 'Saif Client',
-      email: 'saif@vlocal.com',
+      email: 'saif@CODEVATE.com',
       password: 'password123',
       role: 'client',
       company: 'Nexus Industries',
@@ -58,7 +58,7 @@ export async function GET() {
       userId: clientUser._id,
       companyName: 'Nexus Industries',
       contactName: 'Saif Client',
-      email: 'saif@vlocal.com',
+      email: 'saif@CODEVATE.com',
       phone: '+1 (555) 999-8888',
       industry: 'Technology',
       notes: 'Premium enterprise client. Demands clean UI, Recharts dashboards, and Kanban views.',
